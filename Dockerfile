@@ -4,7 +4,7 @@ MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 
 # Tomcat Version and other ENV
 ARG TOMCAT_MAJOR=${TOMCAT_MAJOR:-8}
-ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.5.3}
+ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.0.44}
 
 ENV TOMCAT_HOME=/opt/tomcat \
     CATALINA_HOME=/opt/tomcat \
@@ -20,12 +20,12 @@ RUN set -ex && \
     apk upgrade --update && apk add --update curl axel && \
     TomcatUrl="http://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz" && \
     curl -jkSL ${TomcatUrl} | tar xz -C /opt/tomcat --strip-components=1 && \
-    rm -rf ${TOMCAT_HOME}/webapps/* && \
+    #rm -rf ${TOMCAT_HOME}/webapps/* && \
     addgroup -S -g 433 tomcat && \
     adduser -u 433 -S -h ${CATALINA_HOME} -s /sbin/nologin -g 'Docker image user' -G tomcat tomcat && \
     chown -R tomcat:tomcat ${CATALINA_HOME} && \
     # Remove unneeded apps and files
-    rm -rf ${CATALINA_HOME}/{{RELEASE-NOTES,RUNNING.txt},webapps/{examples,docs,ROOT,host-manager},bin/{*.bat,*.tar.gz}} && \
+    #rm -rf ${CATALINA_HOME}/{{RELEASE-NOTES,RUNNING.txt},webapps/{examples,docs,ROOT,host-manager},bin/{*.bat,*.tar.gz}} && \
     apk del axel && \
     rm -rf /tmp/* /var/lib/{apt,dpkg,cache,log}/*
 
