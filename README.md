@@ -24,7 +24,7 @@ This docker apache tomcat images supports production and development. A lot of o
 
 You can deploy your own webapps and tomcat extended library with local volumens or better with a docker data container.
 
-![Apache Tomcat 8 docker image design](design-tomcat8-images.png)
+![Apache Tomcat 8 docker image design](https://github.com/xiaoyawl/docker-tomcat/raw/master/design-tomcat8-images.png)
 
 ## Found the tomcat docker images
 
