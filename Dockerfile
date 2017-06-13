@@ -1,10 +1,10 @@
 # AlpineLinux with a Oracle Java and Tomcat
-FROM benyoo/jdk:alpine.1.8.131.b11
+FROM benyoo/jdk:alpine.1.7.80.b15
 MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 
 # Tomcat Version and other ENV
-ARG TOMCAT_MAJOR=${TOMCAT_MAJOR:-8}
-ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.0.44}
+ARG TOMCAT_MAJOR=${TOMCAT_MAJOR:-7}
+ARG TOMCAT_VERSION=${TOMCAT_VERSION:-7.0.78}
 
 ENV TOMCAT_HOME=/opt/tomcat \
     CATALINA_HOME=/opt/tomcat \
