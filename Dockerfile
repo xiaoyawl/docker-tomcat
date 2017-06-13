@@ -17,7 +17,7 @@ ENV TOMCAT_HOME=/opt/tomcat \
 RUN set -ex && \
     [ ! -d ${TOMCAT_HOME} ] && mkdir -p ${TOMCAT_HOME} && \
     [ ! -d ${DEPLOY_DIR} ] && mkdir -p ${DEPLOY_DIR} && \
-    apk upgrade --update && apk add --update curl axel && \
+    apk upgrade --update && apk add --update curl axel pwgen && \
     TomcatUrl="http://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz" && \
     curl -jkSL ${TomcatUrl} | tar xz -C /opt/tomcat --strip-components=1 && \
     #rm -rf ${TOMCAT_HOME}/webapps/* && \
