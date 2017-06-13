@@ -25,7 +25,7 @@ RUN set -ex && \
     adduser -u 433 -S -h ${CATALINA_HOME} -s /sbin/nologin -g 'Docker image user' -G tomcat tomcat && \
     chown -R tomcat:tomcat ${CATALINA_HOME} && \
     # Remove unneeded apps and files
-    #rm -rf ${CATALINA_HOME}/{{RELEASE-NOTES,RUNNING.txt},webapps/{examples,docs,ROOT,host-manager},bin/{*.bat,*.tar.gz}} && \
+    rm -rf ${CATALINA_HOME}/{{RELEASE-NOTES,RUNNING.txt},webapps/{examples,docs,ROOT,host-manager},bin/{*.bat,*.tar.gz}} && \
     apk del axel && \
     rm -rf /tmp/* /var/lib/{apt,dpkg,cache,log}/*
 
