@@ -27,9 +27,11 @@ fi
 # Autorestart possible?
 #-XX:OnError="cmd args; cmd args"
 #-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/heapdump.hprof -XX:OnOutOfMemoryError="sh ~/cleanup.sh"
+LANG=${LANG:-zh_CN.UTF-8}
+JAVA_OPTS=${JAVA_OPTS:--Duser.language=en -Duser.country=US}
 
-export LANG="en_US.UTF-8"
-export JAVA_OPTS="$JAVA_OPTS -Duser.language=en -Duser.country=US"
+export LANG="${LANG}"
+export JAVA_OPTS="$JAVA_OPTS"
 export CATALINA_PID=${CATALINA_HOME}/temp/tomcat.pid
-export CATALINA_OPTS="$CATALINA_OPTS  -Xmx${JAVA_MAXMEMORY}m -DjvmRoute=${TOMCAT_JVM_ROUTE}  -Dtomcat.maxThreads=${TOMCAT_MAXTHREADS}  -Dtomcat.minSpareThreads=${TOMCAT_MINSPARETHREADS}  -Dtomcat.httpTimeout=${TOMCAT_HTTPTIMEOUT}  -Djava.security.egd=file:/dev/./urandom"
+export CATALINA_OPTS="$CATALINA_OPTS -Xmx${JAVA_MAXMEMORY}m -DjvmRoute=${TOMCAT_JVM_ROUTE} -Dtomcat.maxThreads=${TOMCAT_MAXTHREADS} -Dtomcat.minSpareThreads=${TOMCAT_MINSPARETHREADS} -Dtomcat.httpTimeout=${TOMCAT_HTTPTIMEOUT} -Djava.security.egd=file:/dev/./urandom"
 exec ${CATALINA_HOME}/bin/catalina.sh run
