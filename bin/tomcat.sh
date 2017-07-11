@@ -1,5 +1,8 @@
 #!/bin/bash
 
+TOMCAT_WEB_PORT=${TOMCAT_WEB_PORT:-8080}
+sed -i "s/8080/$TOMCAT_WEB_PORT/" $CATALINA_HOME/conf/server.xml
+
 if [ ! -f ${CATALINA_HOME}/.tomcat_created ]; then
   ${CATALINA_HOME}/bin/create_tomcat_user.sh
 fi
