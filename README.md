@@ -104,6 +104,9 @@ docker pull benyoo/tomcat
 | `TOMCAT_PASS`            | random generated | admin password                     |
 | `CATALINA_OPTS`          | s. `tomcat.sh`   | tomcat start parameter             |
 | `JAVA_OPTS`              | s. `tomcat.sh`   | spezial java start/stop parameter  |
+| `TOMCAT_HTTP_PORT`       | `8080`           | HTTP port                          |
+| `TOMCAT_AJP_PORT`        | `8009`           | AJP port                           |
+| `TOMCAT_SERVER_PORT`     | `8005`           | Server port                        |
 
 ### get _tomcat container IP and ports_
 

@@ -4,7 +4,7 @@ MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 
 # Tomcat Version and other ENV
 ARG TOMCAT_MAJOR=${TOMCAT_MAJOR:-8}
-ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.0.44}
+ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.5.23}
 
 ENV TOMCAT_HOME=/opt/tomcat \
     CATALINA_HOME=/opt/tomcat \
