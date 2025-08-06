@@ -4,7 +4,7 @@ MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 
 # Tomcat Version and other ENV
 ARG TOMCAT_MAJOR=${TOMCAT_MAJOR:-8}
-ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.5.23}
+ARG TOMCAT_VERSION=${TOMCAT_VERSION:-8.5.100}
 
 ENV TOMCAT_HOME=/opt/tomcat \
     CATALINA_HOME=/opt/tomcat \
@@ -17,12 +17,25 @@ ENV TOMCAT_HOME=/opt/tomcat \
 RUN set -ex && \
     [ ! -d ${TOMCAT_HOME} ] && mkdir -p ${TOMCAT_HOME} && \
     [ ! -d ${DEPLOY_DIR} ] && mkdir -p ${DEPLOY_DIR} && \
-    apk upgrade --update && apk add --update curl axel pwgen && \
+    apk upgrade --update && apk add --update curl axel pwgen ca-certificates && \
+    # 解决Let's Encrypt证书问题
+    mkdir -p /certs && cd /certs && \
+    wget https://letsencrypt.org/certs/isrgrootx1.pem && \
+    wget https://letsencrypt.org/certs/lets-encrypt-r3.pem && \
+    wget https://letsencrypt.org/certs/trustid-x3-root.pem && \
+    JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))) && \
+    TRUSTSTORE="$JAVA_HOME/jre/lib/security/cacerts" && \
+    keytool -import -noprompt -trustcacerts -alias isrgrootx1 -keystore "$TRUSTSTORE" -file isrgrootx1.pem -storepass changeit && \
+    keytool -import -noprompt -trustcacerts -alias letsencryptr3 -keystore "$TRUSTSTORE" -file lets-encrypt-r3.pem -storepass changeit && \
+    keytool -import -noprompt -trustcacerts -alias trustidx3 -keystore "$TRUSTSTORE" -file trustid-x3-root.pem -storepass changeit && \
     TomcatUrl="http://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR}/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz" && \
     curl -jkSL ${TomcatUrl} | tar xz -C /opt/tomcat --strip-components=1 && \
     #rm -rf ${TOMCAT_HOME}/webapps/* && \
     addgroup -S -g 433 tomcat && \
     adduser -u 433 -S -h ${CATALINA_HOME} -s /sbin/nologin -g 'Docker image user' -G tomcat tomcat && \
+    # 配置信任库
+    echo "export JAVA_OPTS=\"\$JAVA_OPTS -Djavax.net.ssl.trustStore=$JAVA_HOME/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit\"" > $CATALINA_HOME/bin/setenv.sh && \
+    chmod +x $CATALINA_HOME/bin/setenv.sh && \
     chown -R tomcat:tomcat ${CATALINA_HOME} && \
     # Remove unneeded apps and files
     #rm -rf ${CATALINA_HOME}/{{RELEASE-NOTES,RUNNING.txt},webapps/{examples,docs,ROOT,host-manager},bin/{*.bat,*.tar.gz}} && \
