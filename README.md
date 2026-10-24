@@ -19,7 +19,9 @@
 - JDK 来源：只使用 `benyoo/jdk` 镜像，不在 Tomcat 项目里重新安装 JDK
 - 构建方式：Docker Buildx 多架构构建
 
-2026-10-24 已完成本批 **13 个 Alpine 3.24 组合、26 个平台运行结果**：Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**，JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-alpine3.24-20261024`。amd64 原生、arm64 QEMU 模拟的版本、证书信任、正常 HTTPS 及最小 JSP 检查均通过，OCI 归档已保留；**尚未上传 Docker Hub 或部署生产**，新标签仍不可视为已发布。真实业务 WAR 和自定义 truststore 未验收。详见[本批构建验收报告](docs/Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)及 `docs/TAGS.md`。
+2026-10-24 已完成本批 **13 个 Alpine 3.24 组合、26 个平台运行结果**：Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**，JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-alpine3.24-20261024`。amd64 原生、arm64 QEMU 模拟的版本、证书信任、正常 HTTPS 及最小 JSP 检查均通过，OCI 归档已保留；**已向 Docker Hub 发布 52 个版本标签及 latest，共 53 个标签，全部通过双架构 digest 核验**，生产未部署。真实业务 WAR 和自定义 truststore 未验收。详见[本批构建验收报告](docs/Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)及 `docs/TAGS.md`。
+
+本批发布结果见[发布与标签核验报告](docs/Alpine版Tomcat发布与标签核验报告-20261024213303-20261024213303.md)。`latest` 最后更新，指向 **Tomcat 11.0.27 + JDK 17.0.21.0.2 + Alpine 3.24**；[Docker Hub 仓库](https://hub.docker.com/r/benyoo/tomcat)概览已同步并读回核对。
 
 > 维护分支矩阵按 Apache Tomcat 官方维护状态制定。另提供按需构建的 `JDK 8 + Tomcat 8.5.100` 历史兼容配置；Tomcat 10.0 不纳入矩阵。Tomcat 9.1 在上游发布后作为 9.0 退场前的迁移分支纳入规划。
 
@@ -36,7 +38,7 @@ docker buildx bake -f docker-bake.legacy.hcl --print
 docker buildx bake -f docker-bake.legacy.hcl tomcat8-5-alpine3-24-jdk8
 ```
 
-兼容配置共 1 个 target，维护分支为 12 个 Alpine target，总计 13 个组合、26 个架构产物。本批双架构构建及探针验收已通过，但尚未发布；下面的标签为发布计划，不代表已可拉取：
+兼容配置共 1 个 target，维护分支为 12 个 Alpine target，总计 13 个组合、26 个架构产物。本批双架构构建、探针验收及发布已完成，下面的标签已可拉取：
 
 ```text
 benyoo/tomcat:8.5-jdk8-alpine3.24
@@ -108,7 +110,7 @@ benyoo/tomcat
 | `<tomcat>-jdk<jdk>-<os>-<build-date>` | 日期锁定别名，例如 `11.0-jdk17-alpine3.24-20261024` |
 | `<tomcat-full>-jdk<jdk-full>-<os>-<build-date>` | 完整可追溯版本 |
 
-本次候选标签示例（尚未发布）：
+本批已发布标签示例：
 
 ```text
 benyoo/tomcat:9.0-jdk8-alpine3.24
@@ -211,7 +213,7 @@ IMAGE="benyoo/tomcat"
 docker buildx bake -f docker-bake.generated.hcl
 ```
 
-获授权后逐版本发布 DockerHub；先按发布手册完成低版本线，再处理高版本线，每条线先核验精确标签再更新移动别名。以下仅示意选择单个 target，不对全矩阵直接推送：
+获授权后逐版本发布 DockerHub；先按发布手册完成低版本线，再处理高版本线，每条线先核验精确标签再更新移动别名。以下是新产物构建发布的示意，不对全矩阵直接推送；已验收 OCI 的发布应按 `docs/RELEASE_RUNBOOK.md` 的归档流程执行，避免重建改变 digest：
 
 ```bash
 IMAGE="benyoo/tomcat"
