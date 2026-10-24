@@ -15,6 +15,7 @@ set -Eeuo pipefail
 IMAGE="${IMAGE:-benyoo/tomcat:11.0-jdk17-alpine3.24}"
 CONTAINER_NAME="${CONTAINER_NAME:-tomcat-verify}"
 PORT="${PORT:-18080}"
+HTTP_PORT="${TOMCAT_HTTP_PORT:-8080}"
 
 cleanup() {
     docker rm -f "$CONTAINER_NAME" >/dev/null 2>&1 || true
@@ -24,7 +25,8 @@ cleanup
 
 docker run -d \
     --name "$CONTAINER_NAME" \
-    -p "${PORT}:8080" \
+    -e "TOMCAT_HTTP_PORT=${HTTP_PORT}" \
+    -p "127.0.0.1:${PORT}:${HTTP_PORT}" \
     "$IMAGE" >/dev/null
 
 for _ in $(seq 1 30); do

@@ -19,11 +19,11 @@
 - JDK 来源：只使用 `benyoo/jdk` 镜像，不在 Tomcat 项目里重新安装 JDK
 - 构建方式：Docker Buildx 多架构构建
 
-2026-10-24 三系统矩阵已全部完成：**39 个组合、78 个平台运行结果、156 个版本标签及 latest（共 157 个标签）**。本次新增 CentOS Stream 9 / Rocky Linux 9 的 26 个组合，原 13 个 Alpine 组合复用已验收产物。所有标签的 index 及双平台 digest 均已读回核对。amd64 原生、arm64 为 QEMU 模拟；真实业务 WAR、自定义 truststore 与 ARM 真机尚未验收，生产未部署。
+**2026-10-25 已修复旧镜像 HTTP 端口变量兼容缺失**：`TOMCAT_HTTP_PORT=9027` 现可让 Tomcat 实际监听9027，保留原 `JAVA_OPTS` / `CATALINA_OPTS`，默认8080保持可用。三系统 **39组合、78平台、156端口场景** 已重新构建并通过回归；157个标签及双架构digest已核对。
 
-Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**；JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-<系统>-20261024`。
+按用户要求继续使用 **20261024标签**，其digest已更新；实际构建时间记录为20261025。已有客户端必须重新pull，历史回滚使用已记录的旧digest/OCI。`latest` 最后更新，继续指向 **Tomcat11.0.27 + JDK17.0.21.0.2 + Alpine3.24**。详情见[端口兼容修复与全矩阵验收报告](docs/Tomcat端口兼容修复与全矩阵验收报告-20261025015531-20261025015531.md)和[完整修复清单](docs/Tomcat端口兼容修复镜像清单-20261025015531-20261025015531.json)。
 
-`latest` 在本批版本标签完成后最后核对，继续指向 **Tomcat 11.0.27 + JDK 17.0.21.0.2 + Alpine 3.24**；[Docker Hub](https://hub.docker.com/r/benyoo/tomcat) 概览只包含公开代码链接。详细结果见[三系统构建发布验收报告](docs/三系统Tomcat构建发布与双架构验收报告-20261024223534-20261024223534.md)；[完整发布清单](docs/三系统Tomcat镜像发布清单-20261024223534-20261024223534.json)。
+生产仍保留用户已恢复的旧镜像；真实业务交易、自定义truststore和ARM真机未验收。amd64为原生、arm64为QEMU模拟。[Docker Hub概览](https://hub.docker.com/r/benyoo/tomcat)已同步，公开文档入口只指向GitHub。
 
 > 维护分支矩阵按 Apache Tomcat 官方维护状态制定。另提供按需构建的 `JDK 8 + Tomcat 8.5.100` 历史兼容配置；Tomcat 10.0 不纳入矩阵。Tomcat 9.1 在上游发布后作为 9.0 退场前的迁移分支纳入规划。
 
@@ -164,6 +164,8 @@ Tomcat 镜像应提供以下默认行为：
 | `CATALINA_BASE` | Tomcat 运行目录，默认 `/opt/tomcat` |
 | `TOMCAT_VERSION` | 完整 Tomcat 版本 |
 | `JAVA_HOME` | 从 `benyoo/jdk` 基础镜像继承 |
+| `TOMCAT_HTTP_PORT` | 默认8080；支持1～65535的固定HTTP端口，例如9027 |
+| `JAVA_OPTS` / `CATALINA_OPTS` | 保留业务JVM参数；端口属性追加到CATALINA_OPTS |
 | `TIMEZONE` | 推荐时区入口，默认 `Asia/Shanghai` |
 | `/usr/local/tomcat` | 兼容官方 Tomcat 镜像常见路径，软链到 `CATALINA_HOME` |
 | `/webapps` | 可选业务 war 挂载目录 |
@@ -176,7 +178,23 @@ Tomcat 镜像应提供以下默认行为：
 catalina.sh run
 ```
 
+## 旧镜像端口迁移
+
+```yaml
+services:
+  tomcat:
+    image: benyoo/tomcat:9.0.123-jdk8u511-b32-alpine3.24-20261024
+    network_mode: host
+    environment:
+      TOMCAT_HTTP_PORT: "9027"
+      JAVA_OPTS: "-Duser.timezone=Etc/GMT+4"
+```
+
+host网络直接使用应用监听端口，ports映射不起作用。自定义只读server.xml应使用 `port="${dstw.tomcat.http.port:-8080}"`，否则其硬编码端口优先。此修复只涉及HTTP端口；管理应用沿用既有禁用状态。
+
 ## Build
+
+`make test` 校验入口和端口边界；本次复用标签批次可使用 `make prepare TAG_DATE=20261024`。`BUILD_DATE` 默认真实北京时间日期，`TAG_DATE` 默认跟随它，只有明确要求复用标签时才单独设置。
 
 真正构建镜像时默认在远程构建节点执行，不在本地直接构建发布镜像。
 

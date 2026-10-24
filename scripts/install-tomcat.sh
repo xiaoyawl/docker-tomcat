@@ -145,6 +145,13 @@ install_tomcat() {
     mkdir -p "$CATALINA_HOME"
     tar -xzf "$tarball" -C "$CATALINA_HOME" --strip-components=1
 
+    # 用系统属性提供旧镜像端口变量；运行时不改写配置，兼容只读配置挂载。
+    sed -i 's/<Connector port="8080" protocol="HTTP\/1.1"/<Connector port="${dstw.tomcat.http.port:-8080}" protocol="HTTP\/1.1"/' "$CATALINA_HOME/conf/server.xml"
+    if ! grep -F 'port="${dstw.tomcat.http.port:-8080}"' "$CATALINA_HOME/conf/server.xml" > /dev/null; then
+        echo "错误：未找到默认 HTTP Connector，无法安装端口兼容配置" >&2
+        return 1
+    fi
+
     rm -rf "$CATALINA_HOME/webapps/docs" \
         "$CATALINA_HOME/webapps/examples" \
         "$CATALINA_HOME/webapps/host-manager" \

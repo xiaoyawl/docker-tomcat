@@ -2,11 +2,17 @@
 
 基于自有 `benyoo/jdk` 的 Apache Tomcat 多架构镜像。已发布 39 个组合，覆盖 Alpine 3.24、CentOS Stream 9、Rocky Linux 9，提供 `linux/amd64`、`linux/arm64`；共 156 个版本标签及最后更新的 `latest`。
 
+## HTTP端口兼容修复（2026-10-25）
+
+现已恢复旧镜像变量 `TOMCAT_HTTP_PORT`：默认8080，支持例如9027的固定监听端口；原JAVA_OPTS/CATALINA_OPTS保持生效，默认配置支持只读挂载。39组合的78个平台、156个默认/非默认端口场景及证书/HTTPS均通过回归。
+
+按用户要求继续使用20261024标签，**标签digest已更新**；已缓存镜像须重新pull，docker restart不会更新镜像。构建实际时间单独记录，旧digest/OCI保留用于回滚。
+
 ## 默认推荐版本
 
 `latest` 指向 **Tomcat 11.0.27 + Oracle JDK 17.0.21.0.2 + Alpine 3.24**，与 `benyoo/tomcat:11.0.27-jdk17.0.21.0.2-alpine3.24-20261024` 为同一份已验收产物。
 
-多架构 index digest：`sha256:53c820a52941ec2918d10623111661f9c8b72b628fe5ab28d45a8fab22b62568`。生产部署建议使用完整版本日期标签或 digest。
+多架构 index digest：`sha256:00637a4ffb49267cdbd375ecc05123843f90effef5a31f720b0a1c8c99de5ab7`。生产部署建议使用完整版本日期标签或 digest。
 
 ## 快速开始
 
@@ -74,6 +80,19 @@ docker exec dstw-tomcat catalina.sh version
 
 例如 `11.0-jdk17-alpine3.24`、`11.0-jdk17-alpine3.24-20261024`、`11.0.27-jdk17.0.21.0.2-alpine3.24` 与该组合的完整版本日期标签指向同一 digest。`latest` 在本批所有版本完成后最后更新。
 
+## 自定义HTTP端口
+
+```bash
+docker run -d \
+    --name dstw-tomcat-9027 \
+    --network host \
+    -e TOMCAT_HTTP_PORT=9027 \
+    -e JAVA_OPTS=-Duser.timezone=Etc/GMT+4 \
+    benyoo/tomcat:9.0.123-jdk8u511-b32-alpine3.24-20261024
+```
+
+host网络直接使用9027，不配置ports映射。自定义server.xml需包含 `port="${dstw.tomcat.http.port:-8080}"` 才能使用该变量；硬编码端口由自定义配置决定。该修复适用于本页矩阵中的本次修订标签，不适用于未更新的历史版本。
+
 ## 部署业务 WAR
 
 `CATALINA_HOME`、`CATALINA_BASE` 默认均为 `/opt/tomcat`，`/usr/local/tomcat` 是兼容软链。使用 `APP_WAR` 时，入口会将指定文件复制到默认部署目录的 `ROOT.war`。
@@ -94,7 +113,7 @@ docker run -d \
 
 ## 验收与兼容边界
 
-- 39 个组合共 78 个平台运行结果已通过：Java/Tomcat 版本、默认信任库相关证书检查、正常 HTTPS 和最小 JSP 请求。
+- 39 个组合共 78 个平台运行结果已通过：Java/Tomcat版本、默认信任库证书检查、正常HTTPS、默认8080和自定义9027，以及JVM参数/只读配置回归。
 - amd64 为原生验收；arm64 为 QEMU 模拟验收，未做 ARM 真机验收。所有 157 个本批公开标签的 index digest、amd64/arm64 manifest digest 均已核对，与已验收 OCI 一致。
 - Tomcat 8.5.100 已停止上游维护，仅用于历史业务兼容；更新 JDK 不会修复 Tomcat 自身后续漏洞。
 - Tomcat 9 使用 Java EE 的 `javax.*` API；Tomcat 10.1、11 使用 Jakarta EE 的 `jakarta.*` API，跨大版本迁移须检查业务与依赖兼容。

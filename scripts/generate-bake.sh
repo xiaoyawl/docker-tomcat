@@ -16,6 +16,7 @@ IMAGE="${IMAGE:-benyoo/tomcat}"
 OUTPUT="${1:-docker-bake.generated.hcl}"
 BUILD_DATE="${BUILD_DATE:-$(TZ=Asia/Shanghai date +%Y%m%d)}"
 PLATFORMS="${PLATFORMS:-linux/amd64,linux/arm64}"
+TAG_DATE="${TAG_DATE:-$BUILD_DATE}"
 
 BASE_TARGETS=(
     "centos9-stream|centos9-stream|benyoo/jdk:%s-centos9-stream-20261024"
@@ -124,8 +125,8 @@ target "${target}" {
   tags = [
     "\${IMAGE}:${tomcat}-jdk${jdk}-${os_name}",
     "\${IMAGE}:${tomcat_full}-jdk${jdk_full}-${os_name}",
-    "\${IMAGE}:${tomcat}-jdk${jdk}-${os_name}-${BUILD_DATE}",
-    "\${IMAGE}:${tomcat_full}-jdk${jdk_full}-${os_name}-${BUILD_DATE}",
+    "\${IMAGE}:${tomcat}-jdk${jdk}-${os_name}-${TAG_DATE}",
+    "\${IMAGE}:${tomcat_full}-jdk${jdk_full}-${os_name}-${TAG_DATE}",
   ]
 }
 EOF

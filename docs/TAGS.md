@@ -5,9 +5,9 @@
 | 格式 | 示例 | 用途 |
 |---|---|---|
 | `<tomcat>-jdk<jdk>-<os>` | `11.0-jdk17-alpine3.24` | 稳定别名 |
-| `<tomcat-full>-jdk<jdk-full>-<os>` | `11.0.27-jdk17.0.21.0.2-alpine3.24` | 完整版本回滚 |
-| `<tomcat>-jdk<jdk>-<os>-<build-date>` | `11.0-jdk17-alpine3.24-20261024` | 构建批次锁定 |
-| `<tomcat-full>-jdk<jdk-full>-<os>-<build-date>` | `11.0.27-jdk17.0.21.0.2-alpine3.24-20261024` | 完整可追溯标签 |
+| `<tomcat-full>-jdk<jdk-full>-<os>` | `11.0.27-jdk17.0.21.0.2-alpine3.24` | 完整组件版本别名；历史回滚使用已记录的digest/OCI |
+| `<tomcat>-jdk<jdk>-<os>-<tag-date>` | `11.0-jdk17-alpine3.24-20261024` | 发布批次；固定内容需使用digest |
+| `<tomcat-full>-jdk<jdk-full>-<os>-<tag-date>` | `11.0.27-jdk17.0.21.0.2-alpine3.24-20261024` | 完整组件与发布批次；本次按授权修订内容 |
 
 ## 当前版本映射
 
@@ -57,3 +57,7 @@ docker buildx bake -f docker-bake.generated.hcl --print
 三系统合计 156 个版本标签及 `latest` 均已发布并核对双架构 digest。`latest` 最后独立更新至 `11.0.27-jdk17.0.21.0.2-alpine3.24-20261024`；不要将它加入各 target 的 Bake 标签，否则低版本任务可能提前覆盖默认入口。Alpine 首次发布记录见[发布与标签核验报告](Alpine版Tomcat发布与标签核验报告-20261024213303-20261024213303.md)。
 
 三系统全部已发布标签及 digest 见[三系统构建发布验收报告](三系统Tomcat构建发布与双架构验收报告-20261024223534-20261024223534.md)和[机器可读清单](三系统Tomcat镜像发布清单-20261024223534-20261024223534.json)。CentOS Stream / Rocky Linux 的基镜像模式分别为 `benyoo/jdk:<完整版本>-centos9-stream-20261024` / `benyoo/jdk:<完整版本>-rockylinux9-20261024`。
+
+## 2026-10-25端口兼容修订
+
+按用户要求复用20261024标签，157个标签的digest已更新。原20261024归档及旧digest保留。`TAG_DATE=20261024` 与实际 `BUILD_DATE=20261025` 分离；生产切换前重新pull并核对本次清单。详见[端口兼容修复与全矩阵验收报告](Tomcat端口兼容修复与全矩阵验收报告-20261025015531-20261025015531.md)及[新旧digest清单](Tomcat端口兼容修复镜像清单-20261025015531-20261025015531.json)。

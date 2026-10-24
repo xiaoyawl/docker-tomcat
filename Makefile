@@ -1,12 +1,13 @@
 IMAGE ?= benyoo/tomcat
 BUILD_DATE ?= $(shell TZ=Asia/Shanghai date +%Y%m%d)
+TAG_DATE ?= $(BUILD_DATE)
 BAKE_FILE ?= docker-bake.generated.hcl
 REMOTE_HOST ?= 158.69.107.254
 REMOTE_PORT ?= 22992
 REMOTE_USER ?= root
 REMOTE_DIR ?= /data/DSTW-Docker-Tomcat
 
-.PHONY: syntax bake bake-print prepare remote-check remote-sync
+.PHONY: syntax test bake bake-print prepare remote-check remote-sync
 
 syntax:
 	bash -n scripts/install-tomcat.sh
@@ -14,15 +15,18 @@ syntax:
 	bash -n scripts/generate-bake.sh
 	bash -n scripts/verify-tomcat.sh
 
+test: syntax
+	bash tests/entrypoint-port.sh
+
 bake:
-	IMAGE="$(IMAGE)" BUILD_DATE="$(BUILD_DATE)" ./scripts/generate-bake.sh "$(BAKE_FILE)"
+	IMAGE="$(IMAGE)" BUILD_DATE="$(BUILD_DATE)" TAG_DATE="$(TAG_DATE)" ./scripts/generate-bake.sh "$(BAKE_FILE)"
 
 bake-print: bake
 	docker buildx bake -f "$(BAKE_FILE)" --print
 
 prepare: syntax
 	$(MAKE) bake-print
-	docker buildx bake -f docker-bake.legacy.hcl --print
+	BUILD_DATE="$(BUILD_DATE)" TAG_DATE="$(TAG_DATE)" docker buildx bake -f docker-bake.legacy.hcl --print
 	@echo "项目准备完成：三系统矩阵，维护分支已刷新并锁定正式版本，8.5 固定为 8.5.100；尚未构建、上传或部署"
 
 remote-check:

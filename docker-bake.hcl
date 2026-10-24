@@ -24,7 +24,7 @@ target "tomcat11-alpine3-24-jdk17" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261024"
+    BUILD_DATE = "20261025"
   }
   tags = [
     "${IMAGE}:11.0-jdk17-alpine3.24",

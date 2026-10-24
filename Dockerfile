@@ -5,7 +5,7 @@ ARG BASE_IMAGE=benyoo/jdk:17.0.21.0.2-alpine3.24-20261024
 ARG TOMCAT_MAJOR=11.0
 ARG TOMCAT_VERSION=11.0.27
 ARG JDK_VERSION=17.0.21.0.2
-ARG BUILD_DATE=20261024
+ARG BUILD_DATE=20261025
 
 LABEL org.opencontainers.image.title="DSTW Docker Tomcat" \
       org.opencontainers.image.authors="Manta <manta.ops.dstw@gmail.com>" \
