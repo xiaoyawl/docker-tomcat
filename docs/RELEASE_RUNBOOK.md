@@ -1,6 +1,6 @@
 # 发布 Runbook
 
-本文件是获授权后的操作流程，不代表已执行发布。2026-10-24 本批仅启用 Alpine，共 13 个 Tomcat/JDK 组合。五个 Alpine JDK 固定版本日期标签均已公开可用，已核对双架构元数据；运行及证书信任仍须验收。其他系统后续补齐，Tomcat 候选版本及 JDK 映射见 `docs/TAGS.md`。
+本文件是获授权后的操作流程，不代表已执行发布。2026-10-24 本批已完成 13 个 Alpine Tomcat/JDK 组合的双架构构建、证书信任、正常 HTTPS 和最小 JSP 验收，arm64 为 QEMU 模拟，详见[构建报告](Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)。OCI 已保留，尚未上传 Docker Hub；后续发布应使用已验收产物并核对 digest。其他系统后续补齐，版本映射见 `docs/TAGS.md`。
 
 ## 1. 前置检查
 
@@ -18,6 +18,8 @@ make remote-check
 - 远程构建节点可连接。
 - 远程 Docker 和 Buildx 可用。
 - `/data` 空间足够。
+
+拉取基础镜像前按需完成第 4 节的 Docker Hub 认证。未登录可能触发 `429 Too Many Requests`；先解决认证或限流原因，不反复重跑构建。认证配置使用本任务独立的 `DOCKER_CONFIG`，限制目录权限并在任务收尾时清除，不覆盖共享登录配置。登录仅用于拉取时，不代表获得镜像推送授权。
 
 ## 2. 同步到远程构建节点
 
@@ -82,7 +84,7 @@ if "linux/amd64" not in platforms or "linux/arm64" not in platforms:
 PY
 ```
 
-## 4. DockerHub 登录
+## 4. DockerHub 登录（需要时在构建拉取前完成）
 
 认证信息必须通过环境变量传入，不在命令、日志或文档中写明文密码。
 

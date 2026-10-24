@@ -232,4 +232,3 @@ target "tomcat11-0-alpine3-24-jdk25" {
     "${IMAGE}:11.0.27-jdk25.0.5.0.2-alpine3.24-20261024",
   ]
 }
-

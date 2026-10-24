@@ -19,7 +19,7 @@
 - JDK 来源：只使用 `benyoo/jdk` 镜像，不在 Tomcat 项目里重新安装 JDK
 - 构建方式：Docker Buildx 多架构构建
 
-2026-10-24 已更新候选配置：Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**。本批仅启用 **Alpine 3.24**，JDK 基线为 **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-alpine3.24-20261024`。这五个基镜像标签均已公开可用，且已核对 amd64 / arm64 元数据；本批 Tomcat 尚未构建、运行验收或发布。详细映射见 `docs/TAGS.md`。
+2026-10-24 已完成本批 **13 个 Alpine 3.24 组合、26 个平台运行结果**：Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**，JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-alpine3.24-20261024`。amd64 原生、arm64 QEMU 模拟的版本、证书信任、正常 HTTPS 及最小 JSP 检查均通过，OCI 归档已保留；**尚未上传 Docker Hub 或部署生产**，新标签仍不可视为已发布。真实业务 WAR 和自定义 truststore 未验收。详见[本批构建验收报告](docs/Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)及 `docs/TAGS.md`。
 
 > 维护分支矩阵按 Apache Tomcat 官方维护状态制定。另提供按需构建的 `JDK 8 + Tomcat 8.5.100` 历史兼容配置；Tomcat 10.0 不纳入矩阵。Tomcat 9.1 在上游发布后作为 9.0 退场前的迁移分支纳入规划。
 
@@ -36,7 +36,7 @@ docker buildx bake -f docker-bake.legacy.hcl --print
 docker buildx bake -f docker-bake.legacy.hcl tomcat8-5-alpine3-24-jdk8
 ```
 
-兼容配置共 1 个 target，声明 `linux/amd64`、`linux/arm64`；维护分支为 12 个 Alpine target，总计 13 个组合、26 个架构产物。新组合尚未构建、运行验收或发布，下面的标签为计划输出，不代表已可拉取：
+兼容配置共 1 个 target，维护分支为 12 个 Alpine target，总计 13 个组合、26 个架构产物。本批双架构构建及探针验收已通过，但尚未发布；下面的标签为发布计划，不代表已可拉取：
 
 ```text
 benyoo/tomcat:8.5-jdk8-alpine3.24
@@ -251,7 +251,7 @@ docker buildx imagetools inspect benyoo/tomcat:11.0-jdk17-alpine3.24
 
 ## 2026-06 历史发布记录
 
-以下为 2026-06 批次记录，不代表本次候选配置已构建或发布。此前已在远程构建节点完成 `benyoo/tomcat:11.0-jdk17-rockylinux9-test` 的 `linux/amd64 --load` smoke build，并完成 Tomcat `11.0`、`10.1` 和 `9.0` 组 DockerHub 多架构发布。
+以下仅为 2026-06 的历史发布记录，本批状态以文首验收报告为准。此前已在远程构建节点完成 `benyoo/tomcat:11.0-jdk17-rockylinux9-test` 的 `linux/amd64 --load` smoke build，并完成 Tomcat `11.0`、`10.1` 和 `9.0` 组 DockerHub 多架构发布。
 
 验证结果：
 

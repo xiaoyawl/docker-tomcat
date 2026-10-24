@@ -109,6 +109,7 @@ write_target() {
     target="tomcat${tomcat//./-}-${target_name}-jdk${jdk}"
 
     cat >> "$OUTPUT" <<EOF
+
 target "${target}" {
   inherits = ["_common"]
   args = {
@@ -125,7 +126,6 @@ target "${target}" {
     "\${IMAGE}:${tomcat_full}-jdk${jdk_full}-${os_name}-${BUILD_DATE}",
   ]
 }
-
 EOF
 }
 

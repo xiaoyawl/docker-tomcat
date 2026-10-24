@@ -46,4 +46,3 @@ target "tomcat8-5-alpine3-24-jdk8" {
     "${IMAGE}:8.5.100-jdk8u511-b32-alpine3.24-${BUILD_DATE}",
   ]
 }
-
