@@ -1,4 +1,4 @@
-# 镜像标签规划
+# 镜像标签与发布清单
 
 ## 标签格式
 
@@ -23,7 +23,7 @@
 | JDK 21 | `21.0.13.0.2` |
 | JDK 25 | `25.0.5.0.2` |
 
-以上是 2026-10-24 已构建并发布的版本。本批仅启用 Alpine：12 个维护 target，加 1 个 8.5.100 兼容 target，26 个平台运行结果已通过。CentOS Stream 和 Rocky Linux 后续补齐。五个 Alpine JDK 固定版本日期标签已核对双架构；本批 OCI、Java/Tomcat 版本、证书信任、正常 HTTPS 与最小 JSP 均已复核，arm64 为 QEMU 模拟验收。真实业务和自定义 truststore 另行验收。详见[构建报告](Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)。
+以上是 2026-10-24 已构建并发布的版本。本批覆盖 Alpine 3.24、CentOS Stream 9、Rocky Linux 9：36 个维护 target 加 3 个历史兼容 target，78 个平台运行结果已通过。五个 Alpine JDK 固定版本日期标签已核对双架构；本批 OCI、Java/Tomcat 版本、证书信任、正常 HTTPS 与最小 JSP 均已复核，arm64 为 QEMU 模拟验收。真实业务和自定义 truststore 另行验收。详见[构建报告](Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)。
 
 | JDK | 本批使用的 Alpine 基础镜像 |
 |---|---|
@@ -54,4 +54,6 @@ docker buildx bake -f docker-bake.generated.hcl --print
 
 ## 本批发布核验
 
-52 个版本标签及 `latest` 均已发布并核对双架构 digest。`latest` 最后独立更新至 `11.0.27-jdk17.0.21.0.2-alpine3.24-20261024`；不要将它加入各 target 的 Bake 标签，否则低版本任务可能提前覆盖默认入口。全部标签与 digest 见[发布与标签核验报告](Alpine版Tomcat发布与标签核验报告-20261024213303-20261024213303.md)。
+三系统合计 156 个版本标签及 `latest` 均已发布并核对双架构 digest。`latest` 最后独立更新至 `11.0.27-jdk17.0.21.0.2-alpine3.24-20261024`；不要将它加入各 target 的 Bake 标签，否则低版本任务可能提前覆盖默认入口。Alpine 首次发布记录见[发布与标签核验报告](Alpine版Tomcat发布与标签核验报告-20261024213303-20261024213303.md)。
+
+三系统全部已发布标签及 digest 见[三系统构建发布验收报告](三系统Tomcat构建发布与双架构验收报告-20261024223534-20261024223534.md)和[机器可读清单](三系统Tomcat镜像发布清单-20261024223534-20261024223534.json)。CentOS Stream / Rocky Linux 的基镜像模式分别为 `benyoo/jdk:<完整版本>-centos9-stream-20261024` / `benyoo/jdk:<完整版本>-rockylinux9-20261024`。

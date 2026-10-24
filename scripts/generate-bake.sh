@@ -18,9 +18,11 @@ BUILD_DATE="${BUILD_DATE:-$(TZ=Asia/Shanghai date +%Y%m%d)}"
 PLATFORMS="${PLATFORMS:-linux/amd64,linux/arm64}"
 
 BASE_TARGETS=(
+    "centos9-stream|centos9-stream|benyoo/jdk:%s-centos9-stream-20261024"
+    "rockylinux9|rockylinux9|benyoo/jdk:%s-rockylinux9-20261024"
     "alpine3-24|alpine3.24|benyoo/jdk:%s-alpine3.24-20261024"
 )
-# 当前批次仅启用 Alpine；CentOS Stream 和 Rocky Linux 后续补入。
+# 三系统维护矩阵；同批发布先固定版本，已验收的 Alpine 产物不重复构建。
 
 TOMCAT_TARGETS=(
     "9.0|8 11 17 21 25"

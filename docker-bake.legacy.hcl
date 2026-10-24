@@ -14,6 +14,8 @@ variable "PLATFORMS" {
 
 group "default" {
   targets = [
+    "tomcat8-5-centos9-stream-jdk8",
+    "tomcat8-5-rockylinux9-jdk8",
     "tomcat8-5-alpine3-24-jdk8",
   ]
 }
@@ -44,5 +46,31 @@ target "tomcat8-5-alpine3-24-jdk8" {
     "${IMAGE}:8.5.100-jdk8u511-b32-alpine3.24",
     "${IMAGE}:8.5-jdk8-alpine3.24-${BUILD_DATE}",
     "${IMAGE}:8.5.100-jdk8u511-b32-alpine3.24-${BUILD_DATE}",
+  ]
+}
+
+target "tomcat8-5-centos9-stream-jdk8" {
+  inherits = ["_legacy"]
+  args = {
+    BASE_IMAGE = "benyoo/jdk:8u511-b32-centos9-stream-20261024@sha256:e7f822547f5a6079e58555b8f5cb69de5ce925d3e20cf2b2f769a886d4ae38aa"
+  }
+  tags = [
+    "${IMAGE}:8.5-jdk8-centos9-stream",
+    "${IMAGE}:8.5.100-jdk8u511-b32-centos9-stream",
+    "${IMAGE}:8.5-jdk8-centos9-stream-${BUILD_DATE}",
+    "${IMAGE}:8.5.100-jdk8u511-b32-centos9-stream-${BUILD_DATE}",
+  ]
+}
+
+target "tomcat8-5-rockylinux9-jdk8" {
+  inherits = ["_legacy"]
+  args = {
+    BASE_IMAGE = "benyoo/jdk:8u511-b32-rockylinux9-20261024@sha256:f9057717bc78cae5066e466cf02c486fe89282c14f8a0f7c3f82368ecb95e71c"
+  }
+  tags = [
+    "${IMAGE}:8.5-jdk8-rockylinux9",
+    "${IMAGE}:8.5.100-jdk8u511-b32-rockylinux9",
+    "${IMAGE}:8.5-jdk8-rockylinux9-${BUILD_DATE}",
+    "${IMAGE}:8.5.100-jdk8u511-b32-rockylinux9-${BUILD_DATE}",
   ]
 }

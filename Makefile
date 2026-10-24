@@ -23,7 +23,7 @@ bake-print: bake
 prepare: syntax
 	$(MAKE) bake-print
 	docker buildx bake -f docker-bake.legacy.hcl --print
-	@echo "项目准备完成：本批仅 Alpine，维护分支已刷新并锁定正式版本，8.5 固定为 8.5.100；尚未构建、上传或部署"
+	@echo "项目准备完成：三系统矩阵，维护分支已刷新并锁定正式版本，8.5 固定为 8.5.100；尚未构建、上传或部署"
 
 remote-check:
 	ssh -i "$${DSTW_SSH_KEY_PATH}" \
@@ -45,6 +45,8 @@ remote-sync:
 		--exclude='./.codex' \
 		--exclude='./.git' \
 		--exclude='./logs' \
+		--exclude='./out' \
+		--exclude='./AGENTS.md' \
 		--exclude='./tmp' \
 		-czf - . | ssh -i "$${DSTW_SSH_KEY_PATH}" \
 		-p "$(REMOTE_PORT)" \

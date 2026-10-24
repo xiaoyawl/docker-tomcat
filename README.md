@@ -1,6 +1,6 @@
 # DSTW Docker Tomcat
 
-源码仓库：[lookback/DSTW-Docker-Tomcat](https://git.dwhd.org/lookback/DSTW-Docker-Tomcat)（私有仓库）。维护者：Manta <manta.ops.dstw@gmail.com>。
+源码仓库：[xiaoyawl/docker-tomcat](https://github.com/xiaoyawl/docker-tomcat)；代码同步维护于私有仓库。维护者：Manta <manta.ops.dstw@gmail.com>。
 
 ![Docker](https://img.shields.io/badge/docker-buildx-blue)
 ![Arch](https://img.shields.io/badge/arch-amd64%20%7C%20arm64-green)
@@ -14,20 +14,22 @@
 
 - Tomcat 长期维护分支：`9.0`、`10.1`、`11.0`
 - 主推基础系统：Alpine 3.24
-- 后续补齐系统：CentOS Stream 9、Rocky Linux 9，本批不生成其配置
+- 兼容系统：CentOS Stream 9、Rocky Linux 9，已补齐构建及发布
 - CPU 架构：`linux/amd64`、`linux/arm64`
 - JDK 来源：只使用 `benyoo/jdk` 镜像，不在 Tomcat 项目里重新安装 JDK
 - 构建方式：Docker Buildx 多架构构建
 
-2026-10-24 已完成本批 **13 个 Alpine 3.24 组合、26 个平台运行结果**：Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**，JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-alpine3.24-20261024`。amd64 原生、arm64 QEMU 模拟的版本、证书信任、正常 HTTPS 及最小 JSP 检查均通过，OCI 归档已保留；**已向 Docker Hub 发布 52 个版本标签及 latest，共 53 个标签，全部通过双架构 digest 核验**，生产未部署。真实业务 WAR 和自定义 truststore 未验收。详见[本批构建验收报告](docs/Alpine版Tomcat多架构构建验收报告-20261024211645-20261024211645.md)及 `docs/TAGS.md`。
+2026-10-24 三系统矩阵已全部完成：**39 个组合、78 个平台运行结果、156 个版本标签及 latest（共 157 个标签）**。本次新增 CentOS Stream 9 / Rocky Linux 9 的 26 个组合，原 13 个 Alpine 组合复用已验收产物。所有标签的 index 及双平台 digest 均已读回核对。amd64 原生、arm64 为 QEMU 模拟；真实业务 WAR、自定义 truststore 与 ARM 真机尚未验收，生产未部署。
 
-本批发布结果见[发布与标签核验报告](docs/Alpine版Tomcat发布与标签核验报告-20261024213303-20261024213303.md)。`latest` 最后更新，指向 **Tomcat 11.0.27 + JDK 17.0.21.0.2 + Alpine 3.24**；[Docker Hub 仓库](https://hub.docker.com/r/benyoo/tomcat)概览已同步并读回核对。
+Tomcat **8.5.100 / 9.0.123 / 10.1.61 / 11.0.27**；JDK **8u511-b32 / 11.0.33.0.2 / 17.0.21.0.2 / 21.0.13.0.2 / 25.0.5.0.2**，统一使用 `benyoo/jdk:<完整版本>-<系统>-20261024`。
+
+`latest` 在本批版本标签完成后最后核对，继续指向 **Tomcat 11.0.27 + JDK 17.0.21.0.2 + Alpine 3.24**；[Docker Hub](https://hub.docker.com/r/benyoo/tomcat) 概览只包含公开代码链接。详细结果见[三系统构建发布验收报告](docs/三系统Tomcat构建发布与双架构验收报告-20261024223534-20261024223534.md)；[完整发布清单](docs/三系统Tomcat镜像发布清单-20261024223534-20261024223534.json)。
 
 > 维护分支矩阵按 Apache Tomcat 官方维护状态制定。另提供按需构建的 `JDK 8 + Tomcat 8.5.100` 历史兼容配置；Tomcat 10.0 不纳入矩阵。Tomcat 9.1 在上游发布后作为 9.0 退场前的迁移分支纳入规划。
 
 ## Tomcat 8.5 历史兼容组合
 
-新增配置在 `docker-bake.legacy.hcl`，仅支持 Tomcat **8.5.100 + Oracle JDK 8u511-b32**，本批仅启用 Alpine 3.24。基础镜像固定到 `20261024` 安全维护批次及多架构 index digest，Tomcat 从 Apache 官方归档下载并校验 SHA-512。
+新增配置在 `docker-bake.legacy.hcl`，仅支持 Tomcat **8.5.100 + Oracle JDK 8u511-b32**，覆盖 Alpine 3.24、CentOS Stream 9、Rocky Linux 9。基础镜像固定到 `20261024` 安全维护批次及多架构 index digest，Tomcat 从 Apache 官方归档下载并校验 SHA-512。
 
 Tomcat 8.5 已于 **2024-03-31** [停止上游维护](https://tomcat.apache.org/tomcat-85-eol.html)。此组合仅用于旧业务兼容；更新 JDK 不会修复 Tomcat 本身的后续漏洞，镜像带有 `dstw.tomcat.lifecycle=eol` 标记。
 
@@ -38,7 +40,7 @@ docker buildx bake -f docker-bake.legacy.hcl --print
 docker buildx bake -f docker-bake.legacy.hcl tomcat8-5-alpine3-24-jdk8
 ```
 
-兼容配置共 1 个 target，维护分支为 12 个 Alpine target，总计 13 个组合、26 个架构产物。本批双架构构建、探针验收及发布已完成，下面的标签已可拉取：
+兼容配置共 3 个 target，维护分支为 36 个 target，总计 39 个组合、78 个架构产物。本批双架构构建、探针验收及发布已完成，下面的标签已可拉取：
 
 ```text
 benyoo/tomcat:8.5-jdk8-alpine3.24
@@ -70,8 +72,8 @@ benyoo/tomcat:8.5.100-jdk8u511-b32-alpine3.24-20261024
 | Tomcat 10.1 | yes | yes | 支持 JDK 11 / 17 / 21 / 25 |
 | Tomcat 11.0 | yes | yes | 支持 JDK 17 / 21 / 25 |
 | Alpine 3.24 | yes | yes | 主推基础系统，基于 `benyoo/jdk:<jdk>-alpine3.24-*` |
-| CentOS Stream 9 | 后续补齐 | 后续补齐 | 本批未启用 |
-| Rocky Linux 9 | 后续补齐 | 后续补齐 | 本批未启用 |
+| CentOS Stream 9 | yes | yes | 已构建、验收并发布 |
+| Rocky Linux 9 | yes | yes | 已构建、验收并发布 |
 
 ## Build Matrix
 
@@ -79,17 +81,17 @@ benyoo/tomcat:8.5.100-jdk8u511-b32-alpine3.24-20261024
 
 | Tomcat | JDK 8 | JDK 11 | JDK 17 | JDK 21 | JDK 25 | 基础系统 |
 |---|---:|---:|---:|---:|---:|---|
-| `8.5.100` | yes | no | no | no | no | Alpine，独立历史兼容配置 |
-| `9.0` | yes | yes | yes | yes | yes | Alpine |
-| `10.1` | no | yes | yes | yes | yes | Alpine |
-| `11.0` | no | no | yes | yes | yes | Alpine |
+| `8.5.100` | yes | no | no | no | no | 三系统，独立历史兼容配置 |
+| `9.0` | yes | yes | yes | yes | yes | Alpine / CentOS Stream / Rocky Linux |
+| `10.1` | no | yes | yes | yes | yes | Alpine / CentOS Stream / Rocky Linux |
+| `11.0` | no | no | yes | yes | yes | Alpine / CentOS Stream / Rocky Linux |
 
-当前启用 13 个 Alpine 构建 target：
+当前启用 39 个构建 target：
 
-- Tomcat 8.5.100：1 个 JDK × 1 个基础系统，独立兼容配置
-- Tomcat 9.0：5 个 JDK × 1 个基础系统
-- Tomcat 10.1：4 个 JDK × 1 个基础系统
-- Tomcat 11.0：3 个 JDK × 1 个基础系统
+- Tomcat 8.5.100：1 个 JDK × 3 个基础系统，独立兼容配置
+- Tomcat 9.0：5 个 JDK × 3 个基础系统
+- Tomcat 10.1：4 个 JDK × 3 个基础系统
+- Tomcat 11.0：3 个 JDK × 3 个基础系统
 
 每个 target 默认构建 `linux/amd64` 和 `linux/arm64`。
 
@@ -110,7 +112,7 @@ benyoo/tomcat
 | `<tomcat>-jdk<jdk>-<os>-<build-date>` | 日期锁定别名，例如 `11.0-jdk17-alpine3.24-20261024` |
 | `<tomcat-full>-jdk<jdk-full>-<os>-<build-date>` | 完整可追溯版本 |
 
-本批已发布标签示例：
+本批已发布标签示例（其他组合见完整清单）：
 
 ```text
 benyoo/tomcat:9.0-jdk8-alpine3.24
@@ -119,6 +121,8 @@ benyoo/tomcat:10.1-jdk11-alpine3.24
 benyoo/tomcat:10.1.61-jdk11.0.33.0.2-alpine3.24-20261024
 benyoo/tomcat:11.0-jdk17-alpine3.24
 benyoo/tomcat:11.0.27-jdk17.0.21.0.2-alpine3.24-20261024
+benyoo/tomcat:9.0.123-jdk8u511-b32-centos9-stream-20261024
+benyoo/tomcat:10.1.61-jdk11.0.33.0.2-rockylinux9-20261024
 ```
 
 ## Planned Repository Layout
