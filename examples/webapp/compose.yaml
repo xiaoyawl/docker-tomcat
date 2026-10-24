@@ -1,0 +1,19 @@
+services:
+  tomcat-webapp:
+    image: benyoo/tomcat:11.0-jdk17-alpine3.24
+    container_name: dstw-tomcat-webapp
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      TIMEZONE: Asia/Shanghai
+      APP_WAR: /webapps/app.war
+      CATALINA_OPTS: "-Dfile.encoding=UTF-8"
+    volumes:
+      - ./app.war:/webapps/app.war:ro
+      - ./logs:/logs
+    logging:
+      driver: json-file
+      options:
+        max-size: "300m"
+        max-file: "5"
