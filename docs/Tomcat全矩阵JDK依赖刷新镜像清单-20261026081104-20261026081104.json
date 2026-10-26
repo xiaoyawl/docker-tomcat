@@ -1,0 +1,1416 @@
+{
+  "tag_date": "20261024",
+  "actual_build_date": "20261026",
+  "source_commit_before_change": "e5c1aaa7ae2762943b87b8f745e92b77fee3fbed",
+  "jdk_source_commit": "81d85fb14a5cfe6cb2f52bd4065fd9e0e0fe4839",
+  "jdk_inputs": [
+    {
+      "major": 8,
+      "variant": "rockylinux9",
+      "image": "benyoo/jdk:8u511-b32-rockylinux9-20261024",
+      "index_digest": "sha256:9608583e867932d0689f351361d6330dcb5546ecc18b828427c7968cc587f253",
+      "platforms": {
+        "amd64": "sha256:8c755f73b1e422c03dbcce9ead87768287e3214809a4b5a443c6026361481093",
+        "arm64": "sha256:ae744b007c28e41cfd0e89df52fab6cc8cf8a351de63f92b6b23d5d3fe8b2587"
+      }
+    },
+    {
+      "major": 8,
+      "variant": "centos9-stream",
+      "image": "benyoo/jdk:8u511-b32-centos9-stream-20261024",
+      "index_digest": "sha256:494d3c51c8ced1f91751225afea951099b146fc373436fa0f46301937dbb01ad",
+      "platforms": {
+        "amd64": "sha256:58db604561343a7794d6fdf1bd107e82f4df3b4197a2745e2dc13e8c2fae689b",
+        "arm64": "sha256:7478dd9155f0eb4f4da2700e79d736f1cba87afaefef665dcea86829b8c902b5"
+      }
+    },
+    {
+      "major": 8,
+      "variant": "alpine3.24",
+      "image": "benyoo/jdk:8u511-b32-alpine3.24-20261024",
+      "index_digest": "sha256:39e53645b5602f6e52f63a796cc77275f7a621026b39632ac84e2679925e4720",
+      "platforms": {
+        "amd64": "sha256:1747ac38c00ea3a276c12a9d28f9869315feeb4c0833442af267a356ea26ed9d",
+        "arm64": "sha256:c4eed048e37590714ae68ae5d12dc9e9d348516ac09136bba890c565366fc66a"
+      }
+    },
+    {
+      "major": 11,
+      "variant": "rockylinux9",
+      "image": "benyoo/jdk:11.0.33.0.2-rockylinux9-20261024",
+      "index_digest": "sha256:895618a8df0a9e3b95bbe5e63b7b44d248ed9f08627ba01b9837e806968d1dcb",
+      "platforms": {
+        "amd64": "sha256:76e1879f30e4160c40f21efd35a741884ad3d64afc01a09ebf07369c7bb88ac2",
+        "arm64": "sha256:e5ce4953386fa26b190cdda26c398940c18a66247ef53c4f45344902cc964ed7"
+      }
+    },
+    {
+      "major": 11,
+      "variant": "centos9-stream",
+      "image": "benyoo/jdk:11.0.33.0.2-centos9-stream-20261024",
+      "index_digest": "sha256:1711bcefbc368e334e158bbd53afeb04c68dd148af1f47d41ddf5b4a52f0b19b",
+      "platforms": {
+        "amd64": "sha256:648d270185e22dbb3b4537ed64f832fc85b787cd0fe49db0a802d590e177dd87",
+        "arm64": "sha256:77f71554f252f2d335619b294073118eaadb6908ee8d4157a9d45b19119cd48c"
+      }
+    },
+    {
+      "major": 11,
+      "variant": "alpine3.24",
+      "image": "benyoo/jdk:11.0.33.0.2-alpine3.24-20261024",
+      "index_digest": "sha256:30c25516f06f1d3e5ef69f6943983782887e8fd2f341d0fec5635ae5c189a49d",
+      "platforms": {
+        "amd64": "sha256:78c05c8457de489dd06e1ce272a40ea3968888171a0980cc5e725eec8878be1b",
+        "arm64": "sha256:f28372ec6b0a87b7c1c7b23fd310912fbcfef29bcb1cd85648a75b67b6b4c558"
+      }
+    },
+    {
+      "major": 17,
+      "variant": "rockylinux9",
+      "image": "benyoo/jdk:17.0.21.0.2-rockylinux9-20261024",
+      "index_digest": "sha256:56f66568f32d8ad58030b70da650acb7632378bf5c75ac2430dc598585e92019",
+      "platforms": {
+        "amd64": "sha256:92f166f85f7f5b5dc6e06320a7df2f76da8e87f4f63c53fd745294bc0519deb0",
+        "arm64": "sha256:2ec92dfe4fd0a6369c066c37cc68237a5c1d1c68ddfb710a7025140c6120bef2"
+      }
+    },
+    {
+      "major": 17,
+      "variant": "centos9-stream",
+      "image": "benyoo/jdk:17.0.21.0.2-centos9-stream-20261024",
+      "index_digest": "sha256:04a4bdeb7322213a1d0abc5c1401bdc4fe70ae7800928574f430fe9f4a619296",
+      "platforms": {
+        "amd64": "sha256:93b8c79a91bdd7ec2f716b4064ce537c4aeffce2c9a641e8bfc78eec0023db8b",
+        "arm64": "sha256:3c11d4d941c0f17cf2ab1779550533a267bae8c69f903a6c9650813a963d38cb"
+      }
+    },
+    {
+      "major": 17,
+      "variant": "alpine3.24",
+      "image": "benyoo/jdk:17.0.21.0.2-alpine3.24-20261024",
+      "index_digest": "sha256:df8c928c7adb446af6c765ccc81e0f57bacb9bf95c51c4f634c8ce139d12904b",
+      "platforms": {
+        "amd64": "sha256:a85012c942515eba3de0c56d25a467b45ec36cbbe5e2c5d3b0e646a5795bf502",
+        "arm64": "sha256:555fb8106fc21abf34caa8e6fc29017b5bd7fc554d5e10e54ea4467ed821e499"
+      }
+    },
+    {
+      "major": 21,
+      "variant": "rockylinux9",
+      "image": "benyoo/jdk:21.0.13.0.2-rockylinux9-20261024",
+      "index_digest": "sha256:39176641976a3aa33111f7c3ba74f880b53439f8d1ed4937e4d6d2288c339769",
+      "platforms": {
+        "amd64": "sha256:31d4573cb4247f937f3f31cc4bb174069449b4aafc2d914fb72cef4a2c8b0713",
+        "arm64": "sha256:1078ba07835f294591d19d152dad300edb5278fd9677029fb0b0638404486833"
+      }
+    },
+    {
+      "major": 21,
+      "variant": "centos9-stream",
+      "image": "benyoo/jdk:21.0.13.0.2-centos9-stream-20261024",
+      "index_digest": "sha256:81322d18e985e89565fa5a430bbd785c230dc2e43b2ef5064a1e7a6f862f350f",
+      "platforms": {
+        "amd64": "sha256:df42595c6709513a7f63488d6b8c98549383b462ca2f2fbf8cfabf4bf9dcba5f",
+        "arm64": "sha256:e6b9c252f380646af9031c92403f0f8649575367b40f09e7c406fee53ea082ae"
+      }
+    },
+    {
+      "major": 21,
+      "variant": "alpine3.24",
+      "image": "benyoo/jdk:21.0.13.0.2-alpine3.24-20261024",
+      "index_digest": "sha256:c145ae5253cddc3799392ca5dc2ac14bbad5bb314e4abe56bb1a385db734c691",
+      "platforms": {
+        "amd64": "sha256:509e26134c3fedb6aaf3e53e6036cf926ed193c38a82552697d30a94d43626e4",
+        "arm64": "sha256:240782cc1a215df4306fc4195f2f639b30551f5c963b3e852611e8b51ddb9252"
+      }
+    },
+    {
+      "major": 25,
+      "variant": "rockylinux9",
+      "image": "benyoo/jdk:25.0.5.0.2-rockylinux9-20261024",
+      "index_digest": "sha256:113452699004cf43076247aa3d9ab9edbc6721ad392495e45754d6d547b27ab6",
+      "platforms": {
+        "amd64": "sha256:89a9c9edb48baa1da597c4bbe8228a560a6d493e40bf9a9225326f2095bf0a30",
+        "arm64": "sha256:f386e76aeeb9e3eaabdfb9c39942366573bd825a6fafceebe47925313ca79778"
+      }
+    },
+    {
+      "major": 25,
+      "variant": "centos9-stream",
+      "image": "benyoo/jdk:25.0.5.0.2-centos9-stream-20261024",
+      "index_digest": "sha256:b9e5b1f5958b1317a4f59eab4cc3d632de3545b1966ff2b6e7170a9d483e2b00",
+      "platforms": {
+        "amd64": "sha256:9ab5f52429007671fc798f1a068aed81d8022ef362fae7167f33805a529be7b4",
+        "arm64": "sha256:a6e0f0e5ac9e07a66a22d3e3e482dd22d2a6a878a4e682f3ef35ab8530055476"
+      }
+    },
+    {
+      "major": 25,
+      "variant": "alpine3.24",
+      "image": "benyoo/jdk:25.0.5.0.2-alpine3.24-20261024",
+      "index_digest": "sha256:a551cf4aa75816302415311adc6fb8266dbfed3e3ff28034a5793ab5c6410207",
+      "platforms": {
+        "amd64": "sha256:389b2fdd3620b5cd259a65cedd6d217ef51e2069e7fee7e6f9226f13271a3c40",
+        "arm64": "sha256:b78e2b414578193308ebf0e5c5a3e2b4ce13eb514e706b3486049176d46122fc"
+      }
+    }
+  ],
+  "source_inputs": {
+    "Dockerfile": "6a24ec0093b2dc482f353c4dc82d09c4a4e97710b74121981875aff4576aaf4f",
+    "scripts/install-tomcat.sh": "a9c424a40871418e275eba4695bd909ab3f39466a477b8987d40bf6f66ea3f6e",
+    "scripts/docker-entrypoint.sh": "78f32b5d50fdc6eebb409649136a194ed47aaac22f9f9fc86c5bdcdc726193fa",
+    "scripts/verify-tomcat.sh": "b89e51ac05ae535c8d69718a1bf419883507daf72a104664e2a22ba9dacd483e",
+    "tests/entrypoint-port.sh": "f93c74f21971c01f94c218bac808be244f6a516dfb97c8741abb44b2c0a48f3d"
+  },
+  "latest_digest": "sha256:b80627f45e9880be27476817fcf12cc3916d8ce6007e1b47eef42a86a082f162",
+  "artifacts": [
+    {
+      "target": "tomcat8-5-alpine3-24-jdk8",
+      "tomcat": "8.5.100",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-alpine3.24-20261024@sha256:39e53645b5602f6e52f63a796cc77275f7a621026b39632ac84e2679925e4720",
+      "index_digest": "sha256:185243753b3a82dad8ea5433b0b55ca3358b0a6e1a31e8ffed605a97ee81cb29",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:7795eb30a47bb63c8969a1aad07a1b129ca9f5d46fba0440c15b4dbe88891487",
+          "config": "sha256:a44005fdb13697696e6213601b2427e439a8621435838a52d642d99ac028fd31"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:c685d7ec8983bcabf45f4759a82cbebd613f5f1cf3f2e5289f282adbbdf52438",
+          "config": "sha256:39f912210e035e5b2cfb95e1315d6d99954909fa950ecbce67a01731058a08e1"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-alpine3.24-20261024",
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-alpine3.24",
+        "benyoo/tomcat:8.5-jdk8-alpine3.24-20261024",
+        "benyoo/tomcat:8.5-jdk8-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:c947ee012e792f13c66db597dec7ed6abae58f5311405965153940187db2f2af"
+    },
+    {
+      "target": "tomcat8-5-centos9-stream-jdk8",
+      "tomcat": "8.5.100",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-centos9-stream-20261024@sha256:494d3c51c8ced1f91751225afea951099b146fc373436fa0f46301937dbb01ad",
+      "index_digest": "sha256:0eff5895b759bf9764a1a949c35e4ba5439ee1474ac28526d96a9105c9eefe3a",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:50358a87dd872ee3292f06abbd2cb57cec5a59822057b24e8c867d9748acd61f",
+          "config": "sha256:e0946b0e2ab8a62b262a8531e81a7e68f33e81970d25e474beff3ee2bf7f7948"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:f2a2d66f1f3fce82a39f06a420dc148f78612a29a2bbcb850353c9f2d9a16958",
+          "config": "sha256:d3ed785e2e3872ec5c5081fbf4f560cf80211b5d20cfcd5bc9883bbb03beb281"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-centos9-stream-20261024",
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-centos9-stream",
+        "benyoo/tomcat:8.5-jdk8-centos9-stream-20261024",
+        "benyoo/tomcat:8.5-jdk8-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:dda29c88347bc89f018df04f836bfe9c58ffcd2e568f1d29fb0b447925e19b5e"
+    },
+    {
+      "target": "tomcat8-5-rockylinux9-jdk8",
+      "tomcat": "8.5.100",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-rockylinux9-20261024@sha256:9608583e867932d0689f351361d6330dcb5546ecc18b828427c7968cc587f253",
+      "index_digest": "sha256:94a96cc3dfe67a64abe3619ffe63d6ad870085a602067ba41f52ec78dd40972d",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:fd2df43513090387aa07b2c4e58356e4bddcbc7c3629bfe35d955743bb54cbd6",
+          "config": "sha256:19b79051a00f66491e6e13ea769117482a6a7c11e8c8eb4fca47047ffa3bc1f1"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:50e1117f2f4f700886a3e62da81f5bf7be44e49037659af69cacfcefb3cd9ecc",
+          "config": "sha256:32f0850852cd791186a59ffd1f031e7851c65a2c2383d174011a9ab8254de82e"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-rockylinux9-20261024",
+        "benyoo/tomcat:8.5.100-jdk8u511-b32-rockylinux9",
+        "benyoo/tomcat:8.5-jdk8-rockylinux9-20261024",
+        "benyoo/tomcat:8.5-jdk8-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:8856cd6cd84f6ae4c6ee627df1a0701dc1ce1cf01b009b547006f6444ab168a1"
+    },
+    {
+      "target": "tomcat9-0-alpine3-24-jdk8",
+      "tomcat": "9.0.123",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-alpine3.24-20261024@sha256:39e53645b5602f6e52f63a796cc77275f7a621026b39632ac84e2679925e4720",
+      "index_digest": "sha256:746d2e6dc6ad5c1ee1699c13a9eecfd7d672f2b98dd59ca946ff9d7c8446da36",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:fea3dde8b9ce9f7738019d02d4be57781e4a8ebbc47e6c66cf1f5d3a6f6b9c0c",
+          "config": "sha256:aefac572df864426d5029ef0e453de85efa0c95ac5a17ea42cdee2a27634d753"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:3ec119fd840c11fd267e1e835322dd8b00147fcfe21a66c6fa2a32f4b2930634",
+          "config": "sha256:37eff487f8aeb078b91003f2087ef4f334bb84023523c94aac0b52b4b46ea5da"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-alpine3.24-20261024",
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-alpine3.24",
+        "benyoo/tomcat:9.0-jdk8-alpine3.24-20261024",
+        "benyoo/tomcat:9.0-jdk8-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:0f245709732abe17aff77873d7e28f3f95cc24e8992ffdca7cfbf925d94fd00a"
+    },
+    {
+      "target": "tomcat9-0-centos9-stream-jdk8",
+      "tomcat": "9.0.123",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-centos9-stream-20261024@sha256:494d3c51c8ced1f91751225afea951099b146fc373436fa0f46301937dbb01ad",
+      "index_digest": "sha256:3542e93cf6f88591d458e01e59b3b8ade3053c4f46aa068fcc1b67c62b6c18cd",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:2508be865ee8a27b2937ac5b7ab70ef992abd6ee198cb06b4fdd05a5d73d10f6",
+          "config": "sha256:4313637e482fa0f49395c751fcd79ccaddbf69f4d407f8281c4f7bb367cda5b0"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:ba6a2142c45cf930a2fcce555b44571188005c6000330d4dc58cac447137d00e",
+          "config": "sha256:b133bb1f288645141d2ce57c355c60c111c878c4b723c341e40a1e02dcd7f5ab"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-centos9-stream-20261024",
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-centos9-stream",
+        "benyoo/tomcat:9.0-jdk8-centos9-stream-20261024",
+        "benyoo/tomcat:9.0-jdk8-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:f84d66daad4cf907d277d30b0134e9ea6492e95a2158a02027e51ce06c0776a4"
+    },
+    {
+      "target": "tomcat9-0-rockylinux9-jdk8",
+      "tomcat": "9.0.123",
+      "jdk": "8u511-b32",
+      "base": "benyoo/jdk:8u511-b32-rockylinux9-20261024@sha256:9608583e867932d0689f351361d6330dcb5546ecc18b828427c7968cc587f253",
+      "index_digest": "sha256:d0b40832675f3aa3ed2732e0092f35e0fb874181755707acb42d13c85574c237",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:219675fdcbc78bd37ddae4d14500733f9e355a9c4ba80188b7e59481db1935fa",
+          "config": "sha256:90c2660ef59375d33d8c2d61c8efd4eeb20c84a5c8232c7a123780a4c111e7b7"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:51e6d25b0c5772e983420e74e86e7e65818446543b84f0d23b951497b9362321",
+          "config": "sha256:80451aa70ff0fab6cb3a0f0d950dedefac81d2ff4bb7d9fc34d7bcc79e29a390"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-rockylinux9-20261024",
+        "benyoo/tomcat:9.0.123-jdk8u511-b32-rockylinux9",
+        "benyoo/tomcat:9.0-jdk8-rockylinux9-20261024",
+        "benyoo/tomcat:9.0-jdk8-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:f44630e43b5bfb09f3b1017ecccaafda0a58ccde8f91b28de9e768fe1d65ac46"
+    },
+    {
+      "target": "tomcat9-0-alpine3-24-jdk11",
+      "tomcat": "9.0.123",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-alpine3.24-20261024@sha256:30c25516f06f1d3e5ef69f6943983782887e8fd2f341d0fec5635ae5c189a49d",
+      "index_digest": "sha256:a21d3a61ee5534ec1d4f09269632f9c00004723be4aabe3502b09dc891ff29b8",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:64f719e197faf4b01caad618a536e8544d49d337563edb1ee18d6a00fdda9110",
+          "config": "sha256:0350310eff2f65c62a1ac0fd345c0b6587adacf9947d06253f9a42df5d17bbe8"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:9ed19726df42e9676aea1311d5503b8fa675193f3b7124c8b558d325ae3e4831",
+          "config": "sha256:10730bd5c5d1c9fef0015ed40a742d931e7e19d1951b0e912706164ac3c5ad26"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-alpine3.24",
+        "benyoo/tomcat:9.0-jdk11-alpine3.24-20261024",
+        "benyoo/tomcat:9.0-jdk11-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:ab369e74ff03af2e8f8e3410f72c9689e0eb9c3b0339ba4e178738689cb410e5"
+    },
+    {
+      "target": "tomcat9-0-centos9-stream-jdk11",
+      "tomcat": "9.0.123",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-centos9-stream-20261024@sha256:1711bcefbc368e334e158bbd53afeb04c68dd148af1f47d41ddf5b4a52f0b19b",
+      "index_digest": "sha256:bdcd8a8cb3bda6df24c7ed790fdfa9fc4f6edf6b3784dfd67a62ca28e36c13ed",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:1ffce3f53b56214932a9f81df5dd83967406516b70df762c97b41ab0597ea695",
+          "config": "sha256:aae5205f2c1614e08f7c031bf76ad069a35f099a42c663e804ac22ca930a2342"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:b9d3182cd2d7c3a4c2404592faf08c66c0eec8e95b5b4c1a642f7c70d6d6544f",
+          "config": "sha256:c23dc3b9d374558159c792b70e2df5a8c372a2a8c197301ff6266aa1dc887094"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-centos9-stream",
+        "benyoo/tomcat:9.0-jdk11-centos9-stream-20261024",
+        "benyoo/tomcat:9.0-jdk11-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:6db900b585270fbe592f4dcc704376ceb1a201d84f33f5077cde0dccab55ed3b"
+    },
+    {
+      "target": "tomcat9-0-rockylinux9-jdk11",
+      "tomcat": "9.0.123",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-rockylinux9-20261024@sha256:895618a8df0a9e3b95bbe5e63b7b44d248ed9f08627ba01b9837e806968d1dcb",
+      "index_digest": "sha256:d001c869080a96ea10bd5c91e70840df7be161b4fd6d1abddbd30e3bdf8e2c54",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:aed251d8b8d70f9549289be4736d0ccfbe552ec314a4409f9cb70a91f58178eb",
+          "config": "sha256:543df87f760c33f39f51be0d6831b75c4a9cbf46ee46200beabb8b7a713d50cb"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:01739540b9a40749103aa105a588c8d0f4df8452a5f1bde3485ac29cde54d513",
+          "config": "sha256:4ea7aa19566787298cb1b4a35154eabec2b0a73e3c58eaf5ae1e5d7b6f154dd7"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:9.0.123-jdk11.0.33.0.2-rockylinux9",
+        "benyoo/tomcat:9.0-jdk11-rockylinux9-20261024",
+        "benyoo/tomcat:9.0-jdk11-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:c8fdd0190130dd7d80424199ce0b2359f3dbf671a0c7f01fc87461fabe3fb92d"
+    },
+    {
+      "target": "tomcat9-0-alpine3-24-jdk17",
+      "tomcat": "9.0.123",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-alpine3.24-20261024@sha256:df8c928c7adb446af6c765ccc81e0f57bacb9bf95c51c4f634c8ce139d12904b",
+      "index_digest": "sha256:54f1a27620cb5214f4472ae470948acf1ef631309d666bf6a067b145c947a4cf",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:60fa97363bcb31aaea77726fbbdf3e03ec07e12ba32f18e545b4ef354cdf3942",
+          "config": "sha256:70bb6ac56f5af94b2848eeabc2596ea550e061d5d25c2c8e1b6f29e345b66e5f"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:631f2ab8ec6aebf87bab2c7988e2299eb96d9d32e6485de8700f0d68f2e4a5a9",
+          "config": "sha256:7450565447f47128077dd35668683b3caebd44f07284688ddc381db397f42403"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-alpine3.24",
+        "benyoo/tomcat:9.0-jdk17-alpine3.24-20261024",
+        "benyoo/tomcat:9.0-jdk17-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:a4beb29062046105f5718acb4323b630e0b2a749ab4bb97d3eede2b797338d52"
+    },
+    {
+      "target": "tomcat9-0-centos9-stream-jdk17",
+      "tomcat": "9.0.123",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-centos9-stream-20261024@sha256:04a4bdeb7322213a1d0abc5c1401bdc4fe70ae7800928574f430fe9f4a619296",
+      "index_digest": "sha256:89032cfb9a0f133e023494f46c3d7c304710d829959132c26e2a38816020c499",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:7cb3ca7d8f3ff838bf4363a71ae42b2e9b45db33759ac734119ccb81761d34ed",
+          "config": "sha256:443225afdb9e9dc85eb634f41fb205d499efe855598306d6aa930306f095d92b"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:d88a2187447105b07e8b0ba999e807afceb4845f017c7d163ca95ab5140d56c8",
+          "config": "sha256:22b52b18426f90aa1c281650da53aa41b35fe0b3f3e558685b4bbb6e6dcf1d18"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-centos9-stream",
+        "benyoo/tomcat:9.0-jdk17-centos9-stream-20261024",
+        "benyoo/tomcat:9.0-jdk17-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:3a4e48452ccb2950620447859bed2b0c427d8817be6c78f33199710753566f0a"
+    },
+    {
+      "target": "tomcat9-0-rockylinux9-jdk17",
+      "tomcat": "9.0.123",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-rockylinux9-20261024@sha256:56f66568f32d8ad58030b70da650acb7632378bf5c75ac2430dc598585e92019",
+      "index_digest": "sha256:256a164d72f807f64f344e1c6076f1780460f84bcc4b235223dfe84d13feaccf",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:a8daa3f2d0f54f31705bdf703e89fbc00d09416c3cb7cd37f41f47b28cdc870b",
+          "config": "sha256:41c7ab34271193552accad8a2731bbe0a55ac3fcfc325c814c2c8537fe825852"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:28c43ed72d2bc843f88e10dc4bb30c35221d2dfc1e49ff02380cbd8b1a189d5d",
+          "config": "sha256:07962e2ad67e7f3f2199f3d8630db424862af7504f3b3ecf37024f60412d80d9"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:9.0.123-jdk17.0.21.0.2-rockylinux9",
+        "benyoo/tomcat:9.0-jdk17-rockylinux9-20261024",
+        "benyoo/tomcat:9.0-jdk17-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:e396f59fa25023908010e5a0079f4ba459df59652196c12ace79805019bdddaa"
+    },
+    {
+      "target": "tomcat9-0-alpine3-24-jdk21",
+      "tomcat": "9.0.123",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-alpine3.24-20261024@sha256:c145ae5253cddc3799392ca5dc2ac14bbad5bb314e4abe56bb1a385db734c691",
+      "index_digest": "sha256:9def2eb9f308c6e60f17e4d9987ee635f0c8c4a5bdd242d0c5b96320aedcb9fe",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:dd6d3b8e63fa87efd0090a5880ee8c1091113c1e8c77e1c8992bc1297a79e643",
+          "config": "sha256:50f5a9c46dc5956bd9b6182266261abb0f412bac5fbee5ae9ff65162e0e5d219"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:a801c322345c0bd06e1f0479ad1af19d73dfb329587dbe6c1fb7634b65b118bd",
+          "config": "sha256:cdd7f13f539fe0eb7e20afb043f623704863e209fc5c1be4c8ab97cc6da22b46"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-alpine3.24",
+        "benyoo/tomcat:9.0-jdk21-alpine3.24-20261024",
+        "benyoo/tomcat:9.0-jdk21-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:c3637270a8b18a4b338e0679524d117fdf61366e06288a4c56cf8b7954422105"
+    },
+    {
+      "target": "tomcat9-0-centos9-stream-jdk21",
+      "tomcat": "9.0.123",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-centos9-stream-20261024@sha256:81322d18e985e89565fa5a430bbd785c230dc2e43b2ef5064a1e7a6f862f350f",
+      "index_digest": "sha256:74c4a740004a8d76a69e47d7ecc0ee9c8a817a370426de5b2eaeaafa1401a59d",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:8b03cb0f3f882291d2a4417507f4df7400bcc53be32fd039ec3f1dfcfdf788f4",
+          "config": "sha256:0a564d6c0a462ceebb1868c8fdb8e5aa0c51f5228de41d6a1654b32e3fed303c"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:18cc1e28bba27142604e6dfe2df230b38cf8104b91d1d1e07d52791777fbcb7f",
+          "config": "sha256:f00c53798b2c05f4bb8abc9bcc6b48ee3b8264c90741d167029560685d6efc37"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-centos9-stream",
+        "benyoo/tomcat:9.0-jdk21-centos9-stream-20261024",
+        "benyoo/tomcat:9.0-jdk21-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:b22393eaa4006ddba2cbe6bf059eb8e4c447b8fef3d62c087f39a9c1a67feded"
+    },
+    {
+      "target": "tomcat9-0-rockylinux9-jdk21",
+      "tomcat": "9.0.123",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-rockylinux9-20261024@sha256:39176641976a3aa33111f7c3ba74f880b53439f8d1ed4937e4d6d2288c339769",
+      "index_digest": "sha256:2c7b0deddaff82aa484372f34086f0eec2b0dc46f2ad51a37b59b8a2e23d56c0",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:07ad470f670b3a1d5d54a6b12a5e90009b4bc549d98da38859a4864509652e8e",
+          "config": "sha256:bf35e3f74493427842fa1978c0bdadac7fd7ee5eee27d687f1f5b5d72a9f4156"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:1f3f086938d90f2a55958bdbdc07c094f6d9201745ecd0b436663a42d703ab56",
+          "config": "sha256:9adc0c1060490f5be6c89214226cf217edd978c42060abcab3e412f7adf45597"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:9.0.123-jdk21.0.13.0.2-rockylinux9",
+        "benyoo/tomcat:9.0-jdk21-rockylinux9-20261024",
+        "benyoo/tomcat:9.0-jdk21-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:415b5984ff191c2a27a15d8720299758794d6c2f30a06df7ac176a6b37bddda2"
+    },
+    {
+      "target": "tomcat9-0-alpine3-24-jdk25",
+      "tomcat": "9.0.123",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-alpine3.24-20261024@sha256:a551cf4aa75816302415311adc6fb8266dbfed3e3ff28034a5793ab5c6410207",
+      "index_digest": "sha256:68dbc73eedbd25a330a1c3b46a1a429235c7260e43de818f9e0323f852dbd8c5",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:b7ecf35a2da3cdd7d68970240b6bfd5a824685b2c22a886f57a867d616a82889",
+          "config": "sha256:e43ef9402282f931037616b5ecffc49648f8e096cbe08a01a68df4bc0e99edc0"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:b6249840e392d6a7ab68e710d93e776386d6b2c0f903586573490a74fbb9c391",
+          "config": "sha256:7ad342392db5ef7d33d9e15d21b0ac0f9bab284df652c33cc3d7f9418e64a26c"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-alpine3.24",
+        "benyoo/tomcat:9.0-jdk25-alpine3.24-20261024",
+        "benyoo/tomcat:9.0-jdk25-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:f4aede020d1b5d716e0c5269518b8b6a5a16f40fba1b0c2101a8ca474b1bce12"
+    },
+    {
+      "target": "tomcat9-0-centos9-stream-jdk25",
+      "tomcat": "9.0.123",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-centos9-stream-20261024@sha256:b9e5b1f5958b1317a4f59eab4cc3d632de3545b1966ff2b6e7170a9d483e2b00",
+      "index_digest": "sha256:6b52505d756eca90150b43a6780fe67660c190ce2d604957337794c8485ebf6a",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:d8980c65f10300722070b92568cde382f4809bb6d9fcca14803b0a16fee4991d",
+          "config": "sha256:f9f1d90a310ca5882ec38b5aeaf0095da5385214485ba0897acd38029df8358e"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:471c684c1d020c82f5d0bd1af228f8f6ae6243ef99b2b4a3fef459f7c9036086",
+          "config": "sha256:0fb0a517963d9736c8b4af693bbe2fc199b9080827b3f682500a733ca4ca9dc9"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-centos9-stream",
+        "benyoo/tomcat:9.0-jdk25-centos9-stream-20261024",
+        "benyoo/tomcat:9.0-jdk25-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:b3d22a63f800c078267b4d23ca3227f50b65342710b8f6ee462c9a1f70f1e8c5"
+    },
+    {
+      "target": "tomcat9-0-rockylinux9-jdk25",
+      "tomcat": "9.0.123",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-rockylinux9-20261024@sha256:113452699004cf43076247aa3d9ab9edbc6721ad392495e45754d6d547b27ab6",
+      "index_digest": "sha256:a9bef88fe72941f0a9aed281d5d79915c5e7f78dd25543f4a7220566b4aae43e",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:a36ae228d4426253c406eca20ba2f494181a9b9d01eb6dc25201e3495f5264c9",
+          "config": "sha256:619755dd0f42a1063e455a528d8be9a70f202c385675ca2bf2e0511b9fcce082"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:32977e71d6ebbca59fed5fb8460c60e707b6780d21b1e416a73d51d598479fbf",
+          "config": "sha256:4c4df7f8ccece02d50fcb8e5dc49186a3b1ddbaf5b939dea5be13b6b54d413ea"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:9.0.123-jdk25.0.5.0.2-rockylinux9",
+        "benyoo/tomcat:9.0-jdk25-rockylinux9-20261024",
+        "benyoo/tomcat:9.0-jdk25-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:87e6ee1856448af93880bb418d364a29137b035f7be99d9f9f6b0300c13740c4"
+    },
+    {
+      "target": "tomcat10-1-alpine3-24-jdk11",
+      "tomcat": "10.1.61",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-alpine3.24-20261024@sha256:30c25516f06f1d3e5ef69f6943983782887e8fd2f341d0fec5635ae5c189a49d",
+      "index_digest": "sha256:78956cc9c55fb2dcbaa5f9b2a29383c743285ce067e1362fc44126d4b938eab3",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:ec69b2124615a821a743fff1b29d06bccf7989f575f930405da72f55b8cbb931",
+          "config": "sha256:7eb021b01093808fc0b50fa2f3b0afba67e0649502a9afc79d0a82b24fd5f62f"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:bc26d92521f6310ef2a8bbffa0b33c4aaef140bd432946a3d5ee207314b9c57e",
+          "config": "sha256:b0338b80178ae585a20a705412837171ab98052d1cbb41ccecc1ad767e1c7bdd"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-alpine3.24",
+        "benyoo/tomcat:10.1-jdk11-alpine3.24-20261024",
+        "benyoo/tomcat:10.1-jdk11-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:75374958784cf66805d50b0b86b02e09c6bc89aaa37e5ab2b4ffd27e52dfec97"
+    },
+    {
+      "target": "tomcat10-1-centos9-stream-jdk11",
+      "tomcat": "10.1.61",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-centos9-stream-20261024@sha256:1711bcefbc368e334e158bbd53afeb04c68dd148af1f47d41ddf5b4a52f0b19b",
+      "index_digest": "sha256:1b1ee40675bad7c14a958fdab1ff7a5924de51d2c99e16b1515eabb976b51181",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:b92e56348c45b01e4b646fb3e6d73f4b9eff426e5674866f76a3ef0b92fd35b3",
+          "config": "sha256:9a3b2a1040ab7123e107587907868b08178f461802fa1f8563b6040e0d56045b"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:c02d8229051d5ea3b6c45d58c36e51db6e6cb546e30b978ae280dac2c17bad35",
+          "config": "sha256:70df55daf48c5d6be0a195bbb4a086f80fce57da449581edb305576ee419476b"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-centos9-stream",
+        "benyoo/tomcat:10.1-jdk11-centos9-stream-20261024",
+        "benyoo/tomcat:10.1-jdk11-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:d3cdede3df67fce78444cdd500924d240a942fb58a358b642c2a05adde7499a7"
+    },
+    {
+      "target": "tomcat10-1-rockylinux9-jdk11",
+      "tomcat": "10.1.61",
+      "jdk": "11.0.33.0.2",
+      "base": "benyoo/jdk:11.0.33.0.2-rockylinux9-20261024@sha256:895618a8df0a9e3b95bbe5e63b7b44d248ed9f08627ba01b9837e806968d1dcb",
+      "index_digest": "sha256:0cbf6178fd89ff705fb439399a1d2091cfa0fde7650a897f0930c4810c9868bf",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:6c32a466d222bbf1a7bb1492264e3232830bfd2e797bac0d7df3923070273aaa",
+          "config": "sha256:47cc8bbeb96716c919a242080868b4cffce36db0d49420ca334dd14a9ac63f70"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:eae14020d02acf98f1c83d3530f2c57ad1f628023dd0943f84f3a1b55cf57ba3",
+          "config": "sha256:820409a31fe77fadc3a2f797a2074a325fd4a9dbbde32207f722463191a2c5a2"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:10.1.61-jdk11.0.33.0.2-rockylinux9",
+        "benyoo/tomcat:10.1-jdk11-rockylinux9-20261024",
+        "benyoo/tomcat:10.1-jdk11-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:c37ae8249139691c31283adac1edf11995e5765aca3cc7b1ed42c9231fb8fa39"
+    },
+    {
+      "target": "tomcat10-1-alpine3-24-jdk17",
+      "tomcat": "10.1.61",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-alpine3.24-20261024@sha256:df8c928c7adb446af6c765ccc81e0f57bacb9bf95c51c4f634c8ce139d12904b",
+      "index_digest": "sha256:79fafef72433d1eec4f1605226277c770f04bcd8dd5527b2f6980816e9249d95",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:2fed5b2e8c0e1b5306b0226c13e20d74da7fcfef81c583bd5a22a072c629792d",
+          "config": "sha256:d97152600ee66b4be925f2a142f5371fe7fac4c6b6b7a73c5df1db3c90cb9c0e"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:0afb3232746dd4d4dbaf02415a2a584ffcbd68e0815b1b925f5957fd98ff2dc0",
+          "config": "sha256:68cb5f64e9bf303a068da3a0249917f496d0a26713a084cd075ad30b30516525"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-alpine3.24",
+        "benyoo/tomcat:10.1-jdk17-alpine3.24-20261024",
+        "benyoo/tomcat:10.1-jdk17-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:39d926d2442bbaa673f566573ac59442007f5ee15ca3a43a239f24275535caff"
+    },
+    {
+      "target": "tomcat10-1-centos9-stream-jdk17",
+      "tomcat": "10.1.61",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-centos9-stream-20261024@sha256:04a4bdeb7322213a1d0abc5c1401bdc4fe70ae7800928574f430fe9f4a619296",
+      "index_digest": "sha256:568443b8b9ad7b24a707c6f9ea86a621bbc224783a3ce59831039d36d4f66505",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:adb6aecc17e863e7ae3d0181343cfc7a751e539a1c92ca9eb0a41322ac44d772",
+          "config": "sha256:0865f8deaf7f552b27f14fd6622a7093f3a34e0358d036d24a68cbeb43b2fd4e"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:73979310e6d3bd70d7b314664a347984862bf1590ece706129a53e2b9c53c0db",
+          "config": "sha256:f426f3288cbd135f8f509009d4d35490a81c7fe1eb4795fdde5ead73fd4aa8b8"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-centos9-stream",
+        "benyoo/tomcat:10.1-jdk17-centos9-stream-20261024",
+        "benyoo/tomcat:10.1-jdk17-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:bc248910677a58fa50c00cca8e6d7c2b2bfa61885b0515f531779a8338a04e5f"
+    },
+    {
+      "target": "tomcat10-1-rockylinux9-jdk17",
+      "tomcat": "10.1.61",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-rockylinux9-20261024@sha256:56f66568f32d8ad58030b70da650acb7632378bf5c75ac2430dc598585e92019",
+      "index_digest": "sha256:f86d38ed25bceeaf584ce0fdd2ea2858a8bf3a361ed99c81815648ff8f55dd79",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:8922176e9c3f410b8c56ae517620b1effa1c4872597eabee381e9c9835f5d901",
+          "config": "sha256:92e7a62b1d3067b3610094aca5a56129cccfb70d832e2ef9f6e6d3dbc795635e"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:cb9e71efac9bb93659a3bb5f58c8ccd731af04e4499e6ea96ae2ba04b5d46ae4",
+          "config": "sha256:ac4f690a9ea4e540ef2b60e6a0033990348a24315d8b9f2543edb8350f089e90"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:10.1.61-jdk17.0.21.0.2-rockylinux9",
+        "benyoo/tomcat:10.1-jdk17-rockylinux9-20261024",
+        "benyoo/tomcat:10.1-jdk17-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:391e4af3fd1c9133e6829962647e5a426876ca7e5ea3e4d1c765fb3766f0e2ae"
+    },
+    {
+      "target": "tomcat10-1-alpine3-24-jdk21",
+      "tomcat": "10.1.61",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-alpine3.24-20261024@sha256:c145ae5253cddc3799392ca5dc2ac14bbad5bb314e4abe56bb1a385db734c691",
+      "index_digest": "sha256:c85808bd71e7b22b9b0c89480997029c72779477ae9f5d703eab5bba97c7581e",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:35108cdee30022d87967436e67903b73a6a9fe6eb97d81551379aa32de54694e",
+          "config": "sha256:9c675558e5f6ba9acc3865f4910d510969351900b7d86825053cc55c7550bfee"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:702f29f1f99537e5d9499626a19aff1c23ef9b1371701461ea4ea6fd0bc8985b",
+          "config": "sha256:95862a1a94573f5bf59a59fd2fe0f7b3a0aa40f7352b8a05f03fd56f9abadf9b"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-alpine3.24",
+        "benyoo/tomcat:10.1-jdk21-alpine3.24-20261024",
+        "benyoo/tomcat:10.1-jdk21-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:e6301ca49b06f389930b2d304bae8e7bbe6525e89116dfbbc36e55a5c9a62940"
+    },
+    {
+      "target": "tomcat10-1-centos9-stream-jdk21",
+      "tomcat": "10.1.61",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-centos9-stream-20261024@sha256:81322d18e985e89565fa5a430bbd785c230dc2e43b2ef5064a1e7a6f862f350f",
+      "index_digest": "sha256:8135f6388b659fbb36cf628e3d073741792ff898e07403ea3693d6db67f27dba",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:e44468f46f985c5bde343d34d990a597e5c1667af00899864d6ad25780390eb8",
+          "config": "sha256:a5013316c3f92d9ac30d511e6524a748edb34e8deb78d661f6131b5fdd88a914"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:238b300e52e2e18a7858523e71f8f2b331b478bb13325a31cded264cd7dc9b75",
+          "config": "sha256:3fe12d2598e44ac643833b71d15beb46579781635e36b4a53dc8b60730ad052c"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-centos9-stream",
+        "benyoo/tomcat:10.1-jdk21-centos9-stream-20261024",
+        "benyoo/tomcat:10.1-jdk21-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:1082f66ce2d999d0dc86b4dd404d70af9966a6aafbbf1b5530080b0dbb594273"
+    },
+    {
+      "target": "tomcat10-1-rockylinux9-jdk21",
+      "tomcat": "10.1.61",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-rockylinux9-20261024@sha256:39176641976a3aa33111f7c3ba74f880b53439f8d1ed4937e4d6d2288c339769",
+      "index_digest": "sha256:dcd2107a74f1b013b6d1086d43e15cb8481958bb7bd698f67fc4282a851820c7",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:db8f3882909ca8e577a8b367f23ff5e2f47c4e8cca06a4eaebfc2c2c4a7175b5",
+          "config": "sha256:a70c5084ed943d5580161fff770bf975c030d55f02dbbeef6c0beb753091e669"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:a1ec71f7e561165b92546232c5520b7c4b469e925d505c61497cc2974ef87557",
+          "config": "sha256:416c3dc627815176c5d8e3ba7f477ab82d21866aa4251869c12ad4ffcd24158c"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:10.1.61-jdk21.0.13.0.2-rockylinux9",
+        "benyoo/tomcat:10.1-jdk21-rockylinux9-20261024",
+        "benyoo/tomcat:10.1-jdk21-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:4dfff30a0cd3c33c7ad0746a1a34b74b80a0a888d7dd5f789adc909feb28d210"
+    },
+    {
+      "target": "tomcat10-1-alpine3-24-jdk25",
+      "tomcat": "10.1.61",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-alpine3.24-20261024@sha256:a551cf4aa75816302415311adc6fb8266dbfed3e3ff28034a5793ab5c6410207",
+      "index_digest": "sha256:43abb6f6cdbf86cb63a4680154f2e72ff977ec9e32b39eeafba0f7eae1c06f80",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:97bd19da2132328fac16b8d9a7a83f4c930ea664d1ed8ed1ba1996430ac5c43c",
+          "config": "sha256:5fd2c06f661d2996bb3895a85ecd4b67b36ec20e5e1f530e5602303d7cdc6f00"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:075900dbbf93ff429377da849af519fa93a64df3c84dcaf5ee562cb37c91be89",
+          "config": "sha256:0193b0d9f6ec2f977ce8b68911009a9266c78f34095d9a818842b0b280cedc37"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-alpine3.24",
+        "benyoo/tomcat:10.1-jdk25-alpine3.24-20261024",
+        "benyoo/tomcat:10.1-jdk25-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:7027e5804108a00bfdb918ff5d5618aa1d180944c8e23fac19a1afdca713bff2"
+    },
+    {
+      "target": "tomcat10-1-centos9-stream-jdk25",
+      "tomcat": "10.1.61",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-centos9-stream-20261024@sha256:b9e5b1f5958b1317a4f59eab4cc3d632de3545b1966ff2b6e7170a9d483e2b00",
+      "index_digest": "sha256:f9630a44af550aaeab9d3d59857527ba9bb13af6e0d2786cf3ed0bb4148e5ee4",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:846d33f11a0e13d4a35f891e71ce0af205cb50ea0dade9213fa6998522342a78",
+          "config": "sha256:487660563845b9380bffeee89b3b27b54ec33599ddd8d2a00c7c1c8de03d6c37"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:0227aae5569bb5155269a6e506e416aba93837de7fc1295795fb0da76cf0e04b",
+          "config": "sha256:959896504d99f3c5ac854ff7c4c69c0c0d3d78f232cb31efabcd07952359d2df"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-centos9-stream",
+        "benyoo/tomcat:10.1-jdk25-centos9-stream-20261024",
+        "benyoo/tomcat:10.1-jdk25-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:8bcb8719e540a2caf35dc905a48eb4fe94ec94d7a5101f07def03fdeaf955b77"
+    },
+    {
+      "target": "tomcat10-1-rockylinux9-jdk25",
+      "tomcat": "10.1.61",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-rockylinux9-20261024@sha256:113452699004cf43076247aa3d9ab9edbc6721ad392495e45754d6d547b27ab6",
+      "index_digest": "sha256:491e2bd1ead6198cbf1dfaf840d27fbb5ac37f30ad7dbe62363b21d052b8ab34",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:a3ff7640446408613cb3868d6ba9f3e322b01f2cc23e013ff7dd6bb6e60f993d",
+          "config": "sha256:8b5cb9898acca60eab9dec9e9943dec7a01b2366be667ea058fe30f90aab5dc6"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:34f61fd1677199e2a013ecbb51b18d640edebf6815bd0b2e20ee4d6e721e3f6e",
+          "config": "sha256:b3c8f6f7b3f2d851ae30058b717c2ae6395633b27f09031648ec871cb9b5f4b3"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:10.1.61-jdk25.0.5.0.2-rockylinux9",
+        "benyoo/tomcat:10.1-jdk25-rockylinux9-20261024",
+        "benyoo/tomcat:10.1-jdk25-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:da8e82edfe64ffea1a3ffe4a8e5d32918063c463c29ce70c10d813918ba04bdf"
+    },
+    {
+      "target": "tomcat11-0-alpine3-24-jdk17",
+      "tomcat": "11.0.27",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-alpine3.24-20261024@sha256:df8c928c7adb446af6c765ccc81e0f57bacb9bf95c51c4f634c8ce139d12904b",
+      "index_digest": "sha256:b80627f45e9880be27476817fcf12cc3916d8ce6007e1b47eef42a86a082f162",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:9f8b14d261ba700ca39b953086f1af3aded8a8d6877fdf6d25d6e72ebac7f378",
+          "config": "sha256:b7e2d89500e65bfb0e8da367b89180f5fc5a87cc600911e501098390fbc0e070"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:feca2499cd2f13b37a45628b00fb34cee54b4c57c5d936d2476550936a32fe7d",
+          "config": "sha256:3557f34ae25d3f3ee798e60f543968a28a5eb50ac669e109830cdbc3706ed26f"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-alpine3.24",
+        "benyoo/tomcat:11.0-jdk17-alpine3.24-20261024",
+        "benyoo/tomcat:11.0-jdk17-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:00637a4ffb49267cdbd375ecc05123843f90effef5a31f720b0a1c8c99de5ab7"
+    },
+    {
+      "target": "tomcat11-0-centos9-stream-jdk17",
+      "tomcat": "11.0.27",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-centos9-stream-20261024@sha256:04a4bdeb7322213a1d0abc5c1401bdc4fe70ae7800928574f430fe9f4a619296",
+      "index_digest": "sha256:843e232e78576aa645b000f992016278550045abf1e98d60a6cbafd83d641fd5",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:6b77bb7aeb577014ad0a653e101e9778424f4f6dd42cc04be6530fd4ae4f7913",
+          "config": "sha256:a5369548cc08d975c41720225ac1b772a0bed547b1c7438bfb6b094977a96d90"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:315bfd8d3e9da65e59169187b1f886482b5091beae81492fa6beeefd9bbb5663",
+          "config": "sha256:4bc4e07dcb8e306d355950fcb0f817ed9f6d7bbb647ba3133516b20c94611729"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-centos9-stream",
+        "benyoo/tomcat:11.0-jdk17-centos9-stream-20261024",
+        "benyoo/tomcat:11.0-jdk17-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:830abeb288a5e2dd7be0324cb128810e90ce3ca8549629b4fe59f21d365fc144"
+    },
+    {
+      "target": "tomcat11-0-rockylinux9-jdk17",
+      "tomcat": "11.0.27",
+      "jdk": "17.0.21.0.2",
+      "base": "benyoo/jdk:17.0.21.0.2-rockylinux9-20261024@sha256:56f66568f32d8ad58030b70da650acb7632378bf5c75ac2430dc598585e92019",
+      "index_digest": "sha256:20835b6f6033d8b58ae4f5b2fcf3b6dd2bff2f4ca86bd7f1bb1523038aad32bf",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:e1e96cd292f6e08776cb46b5cf82012f52f46381d8979df7f828f54581c82b11",
+          "config": "sha256:68bce5f72e69adb9ab909cb1654d7d799c627c9ee1de1f0da84c58cadc57b65a"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:ca031cd6d293aef439ba458d909b897b3d626d23dc3829e9bdf012c40d584dec",
+          "config": "sha256:5893163204d7279dcd793c198711417e5bfa35b47e0dd30d4de9c0dfe0331791"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:11.0.27-jdk17.0.21.0.2-rockylinux9",
+        "benyoo/tomcat:11.0-jdk17-rockylinux9-20261024",
+        "benyoo/tomcat:11.0-jdk17-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:54b649859db8594798850c7a995fd7d663e3b4927d3f6578fb06209d0f234826"
+    },
+    {
+      "target": "tomcat11-0-alpine3-24-jdk21",
+      "tomcat": "11.0.27",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-alpine3.24-20261024@sha256:c145ae5253cddc3799392ca5dc2ac14bbad5bb314e4abe56bb1a385db734c691",
+      "index_digest": "sha256:200889e9ed3968a85912396675850176103a54bf15b7ce43b35c0e45d7b1fa5d",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:fcff5c6c61157989af86bc8be0103c936b98d409256d45081c655396d5f3180c",
+          "config": "sha256:7df61f038caa0d6de1be509c457941731b22f9a27ffb9f3ab06ad5856f1d5f20"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:747c760ea3802935ef695675e56e909150843544f40dbbfd9c48009df0a17b83",
+          "config": "sha256:37e5b1960117248b452e9a13017ba75054433a0f1e87da748b7e8cb31fd78837"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-alpine3.24",
+        "benyoo/tomcat:11.0-jdk21-alpine3.24-20261024",
+        "benyoo/tomcat:11.0-jdk21-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:2f808ac1051df959fe8ec4a126e957422ba3c9f5cbb9577a116fe7c718777381"
+    },
+    {
+      "target": "tomcat11-0-centos9-stream-jdk21",
+      "tomcat": "11.0.27",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-centos9-stream-20261024@sha256:81322d18e985e89565fa5a430bbd785c230dc2e43b2ef5064a1e7a6f862f350f",
+      "index_digest": "sha256:116f14037c4f3fd5766a7170aaeb789e75c6ec9f243573bab216529673ac0f92",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:c6b9241e5743ed939e513a99e2c23b6f274119663a71910ea351c72b62b6f5ad",
+          "config": "sha256:0b84a2dd77b31c94c4ed8a4d7eafae0b081d7b37b8ba7b085dbf9bfb7e3a3eb3"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:6dd3b8484fe527896693829a00868d27b26d98bc03ab2a542f8021ce2278d8b9",
+          "config": "sha256:cc0b2421b023623f780b794c87e05608e128341d618f86ff23a8051d4ba1c9e4"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-centos9-stream",
+        "benyoo/tomcat:11.0-jdk21-centos9-stream-20261024",
+        "benyoo/tomcat:11.0-jdk21-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:eec9f6f7fb837fbbf26fd113114883331f3868a05671114767e21d26350b0d15"
+    },
+    {
+      "target": "tomcat11-0-rockylinux9-jdk21",
+      "tomcat": "11.0.27",
+      "jdk": "21.0.13.0.2",
+      "base": "benyoo/jdk:21.0.13.0.2-rockylinux9-20261024@sha256:39176641976a3aa33111f7c3ba74f880b53439f8d1ed4937e4d6d2288c339769",
+      "index_digest": "sha256:374216a9239999e17a241af15ce1ef65404137eb907eae19975e667a686b7288",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:b74f162ce343cb4b4d01fb0319e6e9ed0ec611bbac32e1d9683d2749cc340e91",
+          "config": "sha256:635b8401e4bb94d9a73ce9d2a4af3c66666b3138eb946f4c714a69fb6fc3f6d1"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:4af48491d09350b25f221d7974c5bf76da36c080d5b983882dea9b31cf069246",
+          "config": "sha256:d9af5a20ca315a9fa3acd2d2e137badde1104d9283d06e34ab6dabb707b150ea"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:11.0.27-jdk21.0.13.0.2-rockylinux9",
+        "benyoo/tomcat:11.0-jdk21-rockylinux9-20261024",
+        "benyoo/tomcat:11.0-jdk21-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:9210b3a9fb1ee31949879222828010511fac246f2b6775e36b1a09eb9f8c22f7"
+    },
+    {
+      "target": "tomcat11-0-alpine3-24-jdk25",
+      "tomcat": "11.0.27",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-alpine3.24-20261024@sha256:a551cf4aa75816302415311adc6fb8266dbfed3e3ff28034a5793ab5c6410207",
+      "index_digest": "sha256:bfddc00df04e1ef3a26951bacc912501a01b7e1d8bf9831ee474e9276113b4c5",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:b1940b9ef55d86847ff8dea1ba98b57b5167ea8539a00a400ade65a5335414ce",
+          "config": "sha256:8b809e70f86abc231edf8fae9cc4ac9ac8040772307d0bfb00313e6df0ad0cf4"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:5181ef2aa9d4f886be45f2971210ff9a7531c18726507734c2ef4436a9f8b433",
+          "config": "sha256:f1d624ca2bf03bf7ea27f5892136f3de9de9bdf81fee4f72c02b21db4cc5d83a"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-alpine3.24-20261024",
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-alpine3.24",
+        "benyoo/tomcat:11.0-jdk25-alpine3.24-20261024",
+        "benyoo/tomcat:11.0-jdk25-alpine3.24"
+      ],
+      "previous_index_digest": "sha256:f171da5779ec4a922382b0145c48bc0145736c453c027067bfd88c34cacb120f"
+    },
+    {
+      "target": "tomcat11-0-centos9-stream-jdk25",
+      "tomcat": "11.0.27",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-centos9-stream-20261024@sha256:b9e5b1f5958b1317a4f59eab4cc3d632de3545b1966ff2b6e7170a9d483e2b00",
+      "index_digest": "sha256:e7f92b9b333eba6585e0c1a8e26bdcfb41e92b11dd32865337519cb4b02fa46e",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:f66c0b91f8d752c8b429a7df9e2a7e3ff9a32cfae38f85d3bc8cc2efdb6541da",
+          "config": "sha256:a4076b1da6b63121dbf253f73841b6472723f3549bdf951740997da8b15544ec"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:1b63129e7a64447e70468cda344056954e9f92f5472bae511b47df3bfd5d0959",
+          "config": "sha256:ee6763edc5d3ce115e1cf5dc31e9dd4fb07eb7a8f54987ef59d35a395db31a60"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-centos9-stream-20261024",
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-centos9-stream",
+        "benyoo/tomcat:11.0-jdk25-centos9-stream-20261024",
+        "benyoo/tomcat:11.0-jdk25-centos9-stream"
+      ],
+      "previous_index_digest": "sha256:992874e565125e1c83bde8c1320b5e89738114ce8521c88a5a4b608a86db15bf"
+    },
+    {
+      "target": "tomcat11-0-rockylinux9-jdk25",
+      "tomcat": "11.0.27",
+      "jdk": "25.0.5.0.2",
+      "base": "benyoo/jdk:25.0.5.0.2-rockylinux9-20261024@sha256:113452699004cf43076247aa3d9ab9edbc6721ad392495e45754d6d547b27ab6",
+      "index_digest": "sha256:3425ec15233c60cf4b563eda7199c38128b26b8362227e303cd21430104ecccd",
+      "platforms": [
+        {
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "digest": "sha256:23b6b9125fd697dcc56ec450ac9017c9c85b215f1b6c0195b0f343a4c8ad2f13",
+          "config": "sha256:47dc15a96a7aca1db5eb419d8091fa176a4ee6d375cfacde01433730bdce1bdc"
+        },
+        {
+          "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+          },
+          "digest": "sha256:26cbcf806059d706e9e1d80602295a8c8398383c4879a63be7025bd0c6355723",
+          "config": "sha256:9526e60b07d9cce11cfbf546d8fc0df200b40d90cb67bc244806c8d6c42c66a1"
+        }
+      ],
+      "tags": [
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-rockylinux9-20261024",
+        "benyoo/tomcat:11.0.27-jdk25.0.5.0.2-rockylinux9",
+        "benyoo/tomcat:11.0-jdk25-rockylinux9-20261024",
+        "benyoo/tomcat:11.0-jdk25-rockylinux9"
+      ],
+      "previous_index_digest": "sha256:4d27e2ee2d2fe1a843dac4089b3c5c155d5dc0a0e863a2f67b501c3d5a67c5f3"
+    }
+  ]
+}

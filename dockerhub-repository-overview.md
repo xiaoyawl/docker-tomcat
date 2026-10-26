@@ -2,6 +2,12 @@
 
 基于自有 `benyoo/jdk` 的 Apache Tomcat 多架构镜像。已发布 39 个组合，覆盖 Alpine 3.24、CentOS Stream 9、Rocky Linux 9，提供 `linux/amd64`、`linux/arm64`；共 156 个版本标签及最后更新的 `latest`。
 
+## JDK依赖刷新（2026-10-26）
+
+全部39组合已基于本次确认的15个JDK digest重新构建。继承中英文字体、图形/AWT运行库、JDK8三系统的旧OpenSSL ABI兼容库，以及JDK源码包和下载缓存清理。78个平台通过安全运行时、字体绘图、PNG/JPEG/GIF、AWT与8080/9027回归。
+
+日期标签仍为20261024，**digest已更新**；实际构建日期为20261026，需重新pull并重建容器。JDK8旧OpenSSL已结束支持，仅用于既有JNI兼容；业务本地组件仍须匹配系统及CPU架构。桌面窗口需要额外显示服务。
+
 ## HTTP端口兼容修复（2026-10-25）
 
 现已恢复旧镜像变量 `TOMCAT_HTTP_PORT`：默认8080，支持例如9027的固定监听端口；原JAVA_OPTS/CATALINA_OPTS保持生效，默认配置支持只读挂载。39组合的78个平台、156个默认/非默认端口场景及证书/HTTPS均通过回归。
@@ -12,7 +18,7 @@
 
 `latest` 指向 **Tomcat 11.0.27 + Oracle JDK 17.0.21.0.2 + Alpine 3.24**，与 `benyoo/tomcat:11.0.27-jdk17.0.21.0.2-alpine3.24-20261024` 为同一份已验收产物。
 
-多架构 index digest：`sha256:00637a4ffb49267cdbd375ecc05123843f90effef5a31f720b0a1c8c99de5ab7`。生产部署建议使用完整版本日期标签或 digest。
+多架构 index digest：`sha256:b80627f45e9880be27476817fcf12cc3916d8ce6007e1b47eef42a86a082f162`。生产部署建议使用完整版本日期标签或 digest。
 
 ## 快速开始
 

@@ -19,11 +19,11 @@
 - JDK 来源：只使用 `benyoo/jdk` 镜像，不在 Tomcat 项目里重新安装 JDK
 - 构建方式：Docker Buildx 多架构构建
 
-**2026-10-25 已修复旧镜像 HTTP 端口变量兼容缺失**：`TOMCAT_HTTP_PORT=9027` 现可让 Tomcat 实际监听9027，保留原 `JAVA_OPTS` / `CATALINA_OPTS`，默认8080保持可用。三系统 **39组合、78平台、156端口场景** 已重新构建并通过回归；157个标签及双架构digest已核对。
+**2026-10-26 已基于更新后的15个JDK基础镜像重建全部39组合**：78个平台、156个8080/9027场景、字体/图片编解码/AWT与安全运行时回归通过。JDK8三系统包含旧ABI兼容库，JDK源码包等构建残留的清理结果已继承。
 
-按用户要求继续使用 **20261024标签**，其digest已更新；实际构建时间记录为20261025。已有客户端必须重新pull，历史回滚使用已记录的旧digest/OCI。`latest` 最后更新，继续指向 **Tomcat11.0.27 + JDK17.0.21.0.2 + Alpine3.24**。详情见[端口兼容修复与全矩阵验收报告](docs/Tomcat端口兼容修复与全矩阵验收报告-20261025015531-20261025015531.md)和[完整修复清单](docs/Tomcat端口兼容修复镜像清单-20261025015531-20261025015531.json)。
+继续使用 **20261024标签**，实际构建日期为20261026，标签digest已更新；需重新pull并重建容器。latest仍指向 **Tomcat11.0.27 + JDK17.0.21.0.2 + Alpine3.24**，最后发布并核对。详情见[JDK依赖刷新与全矩阵验收报告](docs/Tomcat全矩阵JDK依赖刷新与双架构发布验收报告-20261026081104-20261026081104.md)和[39组合及新旧digest清单](docs/Tomcat全矩阵JDK依赖刷新镜像清单-20261026081104-20261026081104.json)。
 
-生产仍保留用户已恢复的旧镜像；真实业务交易、自定义truststore和ARM真机未验收。amd64为原生、arm64为QEMU模拟。[Docker Hub概览](https://hub.docker.com/r/benyoo/tomcat)已同步，公开文档入口只指向GitHub。
+本批没有操作生产容器；真实业务交易、自定义truststore、业务本地库和ARM真机另行验收。amd64原生、arm64 QEMU。`TOMCAT_HTTP_PORT`兼容修复、业务JVM参数保留和默认8080继续有效。[DockerHub概览](https://hub.docker.com/r/benyoo/tomcat)已同步。
 
 > 维护分支矩阵按 Apache Tomcat 官方维护状态制定。另提供按需构建的 `JDK 8 + Tomcat 8.5.100` 历史兼容配置；Tomcat 10.0 不纳入矩阵。Tomcat 9.1 在上游发布后作为 9.0 退场前的迁移分支纳入规划。
 
@@ -176,6 +176,16 @@ Tomcat 镜像应提供以下默认行为：
 
 ```bash
 catalina.sh run
+```
+
+## 图形、字体与JDK8兼容库
+
+三系统支持中英文无显示绘图、PNG/JPEG/GIF和AWT运行库；桌面窗口仍需DISPLAY。JDK8包含 `/opt/compat/openssl-1.0.0s/lib` 中的旧ABI兼容库；这是已结束支持的OpenSSL版本，仅供既有JNI依赖。业务组件须匹配CPU与系统ABI，不随镜像双架构能力自动获得arm64支持。
+
+业务需要旧库传递依赖时，保留已有搜索路径：
+
+```bash
+export LD_LIBRARY_PATH="/opt/compat/openssl-1.0.0s/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 ```
 
 ## 旧镜像端口迁移

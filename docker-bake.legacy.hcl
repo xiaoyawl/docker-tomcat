@@ -5,7 +5,7 @@ variable "IMAGE" {
 }
 
 variable "BUILD_DATE" {
-  default = "20261025"
+  default = "20261026"
 }
 
 variable "TAG_DATE" {
@@ -43,7 +43,7 @@ target "_legacy" {
 target "tomcat8-5-alpine3-24-jdk8" {
   inherits = ["_legacy"]
   args = {
-    BASE_IMAGE = "benyoo/jdk:8u511-b32-alpine3.24-20261024@sha256:16fba9f4d801129c5201019b5bd90dcdbef6ece550b71d010f5244929b26379e"
+    BASE_IMAGE = "benyoo/jdk:8u511-b32-alpine3.24-20261024@sha256:39e53645b5602f6e52f63a796cc77275f7a621026b39632ac84e2679925e4720"
   }
   tags = [
     "${IMAGE}:8.5-jdk8-alpine3.24",
@@ -56,7 +56,7 @@ target "tomcat8-5-alpine3-24-jdk8" {
 target "tomcat8-5-centos9-stream-jdk8" {
   inherits = ["_legacy"]
   args = {
-    BASE_IMAGE = "benyoo/jdk:8u511-b32-centos9-stream-20261024@sha256:e7f822547f5a6079e58555b8f5cb69de5ce925d3e20cf2b2f769a886d4ae38aa"
+    BASE_IMAGE = "benyoo/jdk:8u511-b32-centos9-stream-20261024@sha256:494d3c51c8ced1f91751225afea951099b146fc373436fa0f46301937dbb01ad"
   }
   tags = [
     "${IMAGE}:8.5-jdk8-centos9-stream",
@@ -69,7 +69,7 @@ target "tomcat8-5-centos9-stream-jdk8" {
 target "tomcat8-5-rockylinux9-jdk8" {
   inherits = ["_legacy"]
   args = {
-    BASE_IMAGE = "benyoo/jdk:8u511-b32-rockylinux9-20261024@sha256:f9057717bc78cae5066e466cf02c486fe89282c14f8a0f7c3f82368ecb95e71c"
+    BASE_IMAGE = "benyoo/jdk:8u511-b32-rockylinux9-20261024@sha256:9608583e867932d0689f351361d6330dcb5546ecc18b828427c7968cc587f253"
   }
   tags = [
     "${IMAGE}:8.5-jdk8-rockylinux9",

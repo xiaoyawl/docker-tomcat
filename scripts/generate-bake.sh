@@ -23,7 +23,7 @@ BASE_TARGETS=(
     "rockylinux9|rockylinux9|benyoo/jdk:%s-rockylinux9-20261024"
     "alpine3-24|alpine3.24|benyoo/jdk:%s-alpine3.24-20261024"
 )
-# 三系统维护矩阵；同批发布先固定版本，已验收的 Alpine 产物不重复构建。
+# 三系统维护矩阵；每批先解析并固定版本，实际构建使用本批验收计划。
 
 TOMCAT_TARGETS=(
     "9.0|8 11 17 21 25"

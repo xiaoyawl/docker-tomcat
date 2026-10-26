@@ -61,7 +61,7 @@ target "tomcat9-0-centos9-stream-jdk8" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "8u511-b32"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk8-centos9-stream",
@@ -78,7 +78,7 @@ target "tomcat9-0-centos9-stream-jdk11" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk11-centos9-stream",
@@ -95,7 +95,7 @@ target "tomcat9-0-centos9-stream-jdk17" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk17-centos9-stream",
@@ -112,7 +112,7 @@ target "tomcat9-0-centos9-stream-jdk21" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk21-centos9-stream",
@@ -129,7 +129,7 @@ target "tomcat9-0-centos9-stream-jdk25" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk25-centos9-stream",
@@ -146,7 +146,7 @@ target "tomcat9-0-rockylinux9-jdk8" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "8u511-b32"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk8-rockylinux9",
@@ -163,7 +163,7 @@ target "tomcat9-0-rockylinux9-jdk11" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk11-rockylinux9",
@@ -180,7 +180,7 @@ target "tomcat9-0-rockylinux9-jdk17" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk17-rockylinux9",
@@ -197,7 +197,7 @@ target "tomcat9-0-rockylinux9-jdk21" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk21-rockylinux9",
@@ -214,7 +214,7 @@ target "tomcat9-0-rockylinux9-jdk25" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk25-rockylinux9",
@@ -231,7 +231,7 @@ target "tomcat9-0-alpine3-24-jdk8" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "8u511-b32"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk8-alpine3.24",
@@ -248,7 +248,7 @@ target "tomcat9-0-alpine3-24-jdk11" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk11-alpine3.24",
@@ -265,7 +265,7 @@ target "tomcat9-0-alpine3-24-jdk17" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk17-alpine3.24",
@@ -282,7 +282,7 @@ target "tomcat9-0-alpine3-24-jdk21" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk21-alpine3.24",
@@ -299,7 +299,7 @@ target "tomcat9-0-alpine3-24-jdk25" {
     TOMCAT_MAJOR = "9.0"
     TOMCAT_VERSION = "9.0.123"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:9.0-jdk25-alpine3.24",
@@ -316,7 +316,7 @@ target "tomcat10-1-centos9-stream-jdk11" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk11-centos9-stream",
@@ -333,7 +333,7 @@ target "tomcat10-1-centos9-stream-jdk17" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk17-centos9-stream",
@@ -350,7 +350,7 @@ target "tomcat10-1-centos9-stream-jdk21" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk21-centos9-stream",
@@ -367,7 +367,7 @@ target "tomcat10-1-centos9-stream-jdk25" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk25-centos9-stream",
@@ -384,7 +384,7 @@ target "tomcat10-1-rockylinux9-jdk11" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk11-rockylinux9",
@@ -401,7 +401,7 @@ target "tomcat10-1-rockylinux9-jdk17" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk17-rockylinux9",
@@ -418,7 +418,7 @@ target "tomcat10-1-rockylinux9-jdk21" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk21-rockylinux9",
@@ -435,7 +435,7 @@ target "tomcat10-1-rockylinux9-jdk25" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk25-rockylinux9",
@@ -452,7 +452,7 @@ target "tomcat10-1-alpine3-24-jdk11" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "11.0.33.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk11-alpine3.24",
@@ -469,7 +469,7 @@ target "tomcat10-1-alpine3-24-jdk17" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk17-alpine3.24",
@@ -486,7 +486,7 @@ target "tomcat10-1-alpine3-24-jdk21" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk21-alpine3.24",
@@ -503,7 +503,7 @@ target "tomcat10-1-alpine3-24-jdk25" {
     TOMCAT_MAJOR = "10.1"
     TOMCAT_VERSION = "10.1.61"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:10.1-jdk25-alpine3.24",
@@ -520,7 +520,7 @@ target "tomcat11-0-centos9-stream-jdk17" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk17-centos9-stream",
@@ -537,7 +537,7 @@ target "tomcat11-0-centos9-stream-jdk21" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk21-centos9-stream",
@@ -554,7 +554,7 @@ target "tomcat11-0-centos9-stream-jdk25" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk25-centos9-stream",
@@ -571,7 +571,7 @@ target "tomcat11-0-rockylinux9-jdk17" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk17-rockylinux9",
@@ -588,7 +588,7 @@ target "tomcat11-0-rockylinux9-jdk21" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk21-rockylinux9",
@@ -605,7 +605,7 @@ target "tomcat11-0-rockylinux9-jdk25" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk25-rockylinux9",
@@ -622,7 +622,7 @@ target "tomcat11-0-alpine3-24-jdk17" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "17.0.21.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk17-alpine3.24",
@@ -639,7 +639,7 @@ target "tomcat11-0-alpine3-24-jdk21" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "21.0.13.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk21-alpine3.24",
@@ -656,7 +656,7 @@ target "tomcat11-0-alpine3-24-jdk25" {
     TOMCAT_MAJOR = "11.0"
     TOMCAT_VERSION = "11.0.27"
     JDK_VERSION = "25.0.5.0.2"
-    BUILD_DATE = "20261025"
+    BUILD_DATE = "20261026"
   }
   tags = [
     "${IMAGE}:11.0-jdk25-alpine3.24",
